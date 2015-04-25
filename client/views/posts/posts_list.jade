@@ -1,1 +1,15 @@
 h3 Posts List
+
+.row
+  .col-xs-12
+    table.table.table-striped
+      thead
+        tr
+          th Title
+          th Blurb
+          th Tags
+      tbody
+        tr(ng-repeat='post in posts')
+          td {{post.title}}
+          td {{post.blurb}}
+          td {{post.tags}}

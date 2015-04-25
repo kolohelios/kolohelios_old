@@ -4,6 +4,8 @@ angular.module('kolohelios-blog')
 .controller('PostsNewCtrl', ['$scope', 'Post', function($scope, Post){
   console.log('PostsNewCtrl');
 
+  $scope.posts = Post.init();
+
   $scope.post = {};
   $scope.post.tags = [];
   $scope.post.images = [];
@@ -17,6 +19,10 @@ angular.module('kolohelios-blog')
     $scope.post.tags.push(newTag);
     $scope.newTag = '';
     console.log($scope.post.tags);
+  };
+
+  $scope.addPost = function(post){
+    Post.save(post);
   };
 
 }]);
