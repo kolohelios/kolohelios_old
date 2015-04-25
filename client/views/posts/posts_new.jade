@@ -1,0 +1,37 @@
+h3 New Post
+.row
+  .col-xs-4
+    form(name='newPost')
+    .form-group
+      label(for='title') Title
+      input.form-control(type='text', name='title', ng-model='post.title')
+    .form-group
+      label(for='blurb') Blurb
+      input.form-control(type='text', name='blurb', ng-model='post.blurb')
+    .form-group
+      label(for='imagethumbnail') Thumbnail
+      input.form-control(type='text', name='imagethumbnail', ng-model='post.thumbnailimage')
+  .col-xs-4
+    .form-group
+      p(ng-show='post.tags.length > 0') Tags
+      ul
+        li(ng-repeat='tag in post.tags') {{tag}}
+      label(for='addtag') Add Tag
+      input.form-control(type='text', name='addtag', ng-model='newTag')
+      button.btn.btn-primary(ng-click='addTag(newTag)') Add Tag
+  .col-xs-4
+    .form-group
+      p(ng-show='post.images.length > 0') Images
+      ul
+        li(ng-repeat='image in post.images') {{image}}
+      label(for='addimage') Add Image
+      input.form-control(type='url', name='addimage', ng-model='newImage')
+      button.btn.btn-primary(ng-click='addImage(newImage)') Add Image
+.row
+  .col-xs-12
+    .form-group
+      label(for='body') Body
+      textarea.form-control(rows='10', name='body', ng-model='post.body')
+    
+    
+    

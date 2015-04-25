@@ -1,0 +1,60 @@
+nav.navbar.navbar-default
+  .navbar-header
+    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand(href='#') Jon Edwards
+  // Collect the nav links, forms, and other content for toggling
+  #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    ul.nav.navbar-nav
+      li(role='presentation')
+        a(href='#')
+          i.fa.fa-home.fa-lg
+      li(role='presentation')
+        a(ui-sref='posts') Blog
+      li(role='presentation')
+        a(ui-sref='posts.list') Post List
+      li(role='presentation')
+        a(ui-sref='posts.new') New Post
+      li(role='presentation')
+        a(ui-sref='posts.show') Show Post
+      li.dropdown(role='presentation')
+        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Projects
+          span.caret
+        ul.dropdown-menu(role='menu')
+          li Personal Projects
+          li: a(href='hangman.html') Hangman
+          li: a(href='http://hanoi.kolohelios.com/') Towers of Hanoi
+      li.dropdown(role='presentation')
+        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Contact
+          span.caret
+        ul.dropdown-menu(role='menu')
+          li(role='presentation')
+            a(href='mailto:jkedwards@me.com')
+              i.fa.fa-envelope.fa-lg: a(href="mailto:jkedwards@me.com") jkedwards@me.com
+          li.divider
+          li(role='presentation')
+            a(href='http://twitter.com/kolohelios')
+              i.fa.fa-twitter.fa-lg Twitter
+          li(role='presentation')
+            a(href='https://github.com/kolohelios')
+              i.fa.fa-github.fa-lg Github
+          li(role='presentation')
+            a(href='http://www.linkedin.com/in/kolohelios')
+              i.fa.fa-linkedin.fa-lg LinkedIn
+          li(role='presentation')
+            a(href='http://www.facebook.com/kolohelios')
+              i.fa.fa-facebook.fa-lg Facebook
+          li(role='presentation')
+            a(href='http://www.stackoverflow.com/users/4592962/jon-edwards')
+              i.fa.fa-stack-overflow.fa-lg Stack Overflow
+          li(role='presentation')
+            a(href='https://angel.co/jon-edwards-1')
+              i.fa.fa-angellist.fa-lg Angel List
+          li(role='presentation')
+            a(href='https://www.quora.com/Jon-Edwards-10') Quora
+      
+  // /.navbar-collapse
+// /.container-fluid
