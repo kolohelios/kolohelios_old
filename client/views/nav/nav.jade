@@ -24,6 +24,7 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
         a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Projects
           span.caret
         ul.dropdown-menu(role='menu')
+          li: a(ui-sref='projects.new', ng-show='activeUser') New Project
           li Personal Projects
           li: a(href='hangman.html') Hangman
           li: a(href='http://hanoi.kolohelios.com/') Towers of Hanoi
@@ -55,6 +56,6 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
               i.fa.fa-angellist.fa-lg Angel List
           li(role='presentation')
             a(href='https://www.quora.com/Jon-Edwards-10') Quora
-      li: a(ng-click='logout()') Logout  
+      li: a(ng-click='logout()', ng-show='activeUser') Logout
   // /.navbar-collapse
 // /.container-fluid

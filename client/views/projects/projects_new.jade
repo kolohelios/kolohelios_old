@@ -1,0 +1,46 @@
+h3 New Project
+.row
+  .col-xs-4
+    form(name='newProject')
+    .form-group
+      label(for='name') Name
+      input.form-control(type='text', name='name', ng-model='project.name')
+    .form-group
+      label(for='desc') Desc
+      input.form-control(type='text', name='desc', ng-model='project.desc')
+    .form-group
+      label(for='extddesc') Extended Desc
+      input.form-control(type='text', name='extddesc', ng-model='project.extddesc')
+    .form-group
+      label(for='screenshotthumb') Screenshot Thumbnail
+      input.form-control(type='url', name='screenshotthumb', ng-model='project.screenshotThumb')
+  .col-xs-4
+    .form-group
+      label(for='topthree') Top Three?
+      input.form-control(type='checkbox', name='topthree' ng-model='project.topThree')
+    .form-group
+      p(ng-show='project.techs.length > 0') Techs
+      ul
+        li(ng-repeat='tech in project.techs') {{tech}}
+      label(for='addtech') Add Tech
+      input.form-control(type='text', name='addtech', ng-model='newTech')
+      button.form-control.btn.btn-primary(ng-click='addTech(newTech)') Add Tech
+  .col-xs-4
+    .form-group
+      label(for='role') Extended Desc
+      input.form-control(type='text', name='role', ng-model='project.role')
+    .form-group
+      label(for='screenshot') Screenshot Link
+      input.form-control(type='url', name='screenshot', ng-model='screenshot')
+    .form-group
+      label(for='linktext') Link Text
+      input.form-control(type='text', name='linktext', ng-model='linkText')
+    .form-group
+      label(for='linktoapp') Link to App
+      input.form-control(type='url', name='linktoapp', ng-model='linkToApp')
+.row
+  .col-xs-12
+    .form-group
+      label(for='body') Body
+      textarea.form-control(rows='10', name='body', ng-model='post.body')
+      button.btn.btn-info(ng-click='addPost(post)') Save Post
