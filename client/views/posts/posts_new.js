@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kolohelios-blog')
+angular.module('kolohelios')
 .controller('PostsNewCtrl', ['$scope', 'Post', function($scope, Post){
   console.log('PostsNewCtrl');
 

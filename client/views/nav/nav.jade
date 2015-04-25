@@ -1,4 +1,4 @@
-nav.navbar.navbar-default
+nav.navbar.navbar-default(ng-controller='NavCtrl')
   .navbar-header
     button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
       span.sr-only Toggle navigation
@@ -10,13 +10,13 @@ nav.navbar.navbar-default
   #bs-example-navbar-collapse-1.collapse.navbar-collapse
     ul.nav.navbar-nav
       li(role='presentation')
-        a(href='#')
+        a(ui-sref='home')
           i.fa.fa-home.fa-lg
       li(role='presentation')
         a(ui-sref='posts') Blog
       li(role='presentation')
         a(ui-sref='posts.list') Post List
-      li(role='presentation')
+      li(role='presentation', ng-show='activeUser')
         a(ui-sref='posts.new') New Post
       li(role='presentation')
         a(ui-sref='posts.show') Show Post
@@ -55,6 +55,6 @@ nav.navbar.navbar-default
               i.fa.fa-angellist.fa-lg Angel List
           li(role='presentation')
             a(href='https://www.quora.com/Jon-Edwards-10') Quora
-      
+      li: a(ng-click='logout()') Logout  
   // /.navbar-collapse
 // /.container-fluid

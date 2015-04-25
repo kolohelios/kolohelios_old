@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('kolohelios-blog')
-.controller('AdminCtrl', ['$rootScope', '$scope', 'User', function($rootScope, $scope, User){
+angular.module('kolohelios')
+.controller('AdminCtrl', ['$scope', 'User', '$rootScope', function($scope, User, $rootScope){
 
   $scope.loginUser = function(user){
     User.login(user)

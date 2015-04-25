@@ -1,2 +1,39 @@
-h3 Home
-p test
+.jumbotron
+      p.lead.center Jon Edwards is a junior web developer with experience in the MEAN stack.
+        .row
+          .col-xs-12.col-sm-3
+            img.img-responsive.img-rounded#photo(src='/assets/photo.png', alt='photo of Jon Edwards')
+          .col-xs-12.col-sm-9.center
+            h4 I have experience with the following technologies:
+            ul#list
+              li.fa.fa-check-square &nbsp;Mongo.db
+              li.fa.fa-check-square &nbsp;Express
+              li.fa.fa-check-square &nbsp;Angular.js
+              li.fa.fa-check-square &nbsp;Node.js
+              li.fa.fa-check-square &nbsp;jQuery
+              li.fa.fa-check-square &nbsp;Bootstrap
+            h4 and languages:
+            ul#list
+              li.fa.fa-check-square &nbsp;JavaScript
+        .row
+          .col-xs-12
+            h3.center#projectheading Projects
+        .row.center
+          .col-xs-12.col-sm-4#projectlist(ng-repeat='project in projects track by $index')
+            h4.project-head {{project.name}}
+            img.img-thumbnail(ng-src='{{project.screenshotthumb}}')
+            p.desc {{project.desc}}
+            button.btmbutton(ng-click='caseStudy($index)') Case Study
+        .row#projectview(ng-show='showProjectView')
+          .col-xs-12.center
+            h3 {{projects[view].name}}
+            h4 Case Study
+          .col-xs-6.center
+            img(ng-src='{{projects[view].screenshot}}')
+          .col-xs-6.center
+            p {{projects[view].extddesc}}
+            p Frameworks:
+            ul
+              li(ng-repeat='tech in projects[view].techs') {{tech}}
+            p Role: {{projects[view].role}}
+            a(ng-href='{{projects[view].linktoapp}}') {{projects[view].linktext}}

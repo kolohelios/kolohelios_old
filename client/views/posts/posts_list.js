@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('kolohelios-blog')
+angular.module('kolohelios')
 .controller('PostsListCtrl', ['$scope', 'Post', function($scope, Post){
 
   $scope.posts = Post.init();
 
   console.log('PostsListCtrl');
-  
+
 }]);

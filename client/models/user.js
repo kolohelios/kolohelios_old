@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kolohelios-blog')
+angular.module('kolohelios')
 .factory('User', ['$rootScope', function($rootScope){
 
   function login(user){

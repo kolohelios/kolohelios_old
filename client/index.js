@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kolohelios-blog', ['firebase', 'ui.router'])
+angular.module('kolohelios', ['firebase', 'ui.router'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   console.log('test');
   $urlRouterProvider.otherwise('/');

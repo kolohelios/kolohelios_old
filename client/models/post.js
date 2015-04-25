@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kolohelios-blog')
+angular.module('kolohelios')
 .factory('Post', ['$rootScope', '$firebaseArray', function($rootScope, $firebaseArray){
 
   var fbPosts;
