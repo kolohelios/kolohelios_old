@@ -7,6 +7,7 @@ angular.module('kolohelios-blog', ['firebase', 'ui.router'])
 
   $stateProvider
   .state('home', {url: '/', templateUrl: '/views/home/home.html', controller: 'HomeCtrl'})
+  .state('admin', {url: '/admin', templateUrl: '/views/admin/admin.html', controller: 'AdminCtrl'})
 
   .state('posts', {url: '/posts', templateUrl: '/views/posts/posts.html', abstract: true})
   .state('posts.list', {url: '', templateUrl: '/views/posts/posts_list.html', controller: 'PostsListCtrl'})

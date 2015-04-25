@@ -1,6 +1,6 @@
-h3 Posts List
+h3 Post List
 
-.row
+.row#postslist
   .col-xs-12
     table.table.table-striped
       thead
@@ -8,8 +8,10 @@ h3 Posts List
           th Title
           th Blurb
           th Tags
+          th Thumbnail
       tbody
         tr(ng-repeat='post in posts')
           td {{post.title}}
           td {{post.blurb}}
           td {{post.tags}}
+          td: img(ng-src='{{post.thumbnailimage}}')
