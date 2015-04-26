@@ -6,7 +6,6 @@ angular.module('kolohelios')
   $scope.afAuth.$onAuth(function(data) {
     if(data){
       $rootScope.activeUser = data;
-      console.log(data);
     } else{
       $rootScope.activeUser = null;
     }

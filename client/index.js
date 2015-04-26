@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module('kolohelios', ['firebase', 'ui.router'])
+angular.module('kolohelios', ['firebase', 'ui.router', 'markdown', 'ngSanitize'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-  console.log('test');
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -16,9 +15,8 @@ angular.module('kolohelios', ['firebase', 'ui.router'])
 
   .state('projects', {url: '/projects', templateUrl: '/views/projects/projects.html', abstract: true})
   .state('projects.list', {url: '', templateUrl: '/views/projects/projects_list.html', controller: 'ProjectsListCtrl'})
-  .state('projects.new', {url: '', templateUrl: '/views/projects/projects_new.html', controller: 'ProjectsNewCtrl'})
-  .state('projects.show', {url: '', templateUrl: '/views/projects/projects_show.html', controller: 'ProjectsShowCtrl'});
-
+  .state('projects.new', {url: '/new', templateUrl: '/views/projects/projects_new.html', controller: 'ProjectsNewCtrl'})
+  .state('projects.show', {url: '/:{projectsId}', templateUrl: '/views/projects/projects_show.html', controller: 'ProjectsShowCtrl'});
 
 }])
 .run(['$rootScope', '$window', '$firebaseAuth', 'firebaseUrl', function($rootScope, $window, $firebaseAuth, firebaseUrl){

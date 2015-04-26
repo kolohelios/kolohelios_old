@@ -1,10 +1,12 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('PostsListCtrl', ['$scope', 'Post', function($scope, Post){
+.controller('PostsListCtrl', ['$scope', 'Post', '$state', function($scope, Post, $state){
 
   $scope.posts = Post.init();
 
-  console.log('PostsListCtrl');
+  $scope.showPost = function(post){
+    $state.go('posts.show', {postsId: post.$id});
+  };
 
 }]);

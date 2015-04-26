@@ -10,7 +10,7 @@ h3 Post List
           th Tags
           th Thumbnail
       tbody
-        tr(ng-repeat='post in posts')
+        tr(ng-repeat='post in posts', ng-click='showPost(post)')
           td {{post.title}}
           td {{post.blurb}}
           td {{post.tags}}

@@ -10,7 +10,7 @@ h3 New Project
       input.form-control(type='text', name='desc', ng-model='project.desc')
     .form-group
       label(for='extddesc') Extended Desc
-      input.form-control(type='text', name='extddesc', ng-model='project.extddesc')
+      textarea.form-control(name='extddesc', ng-model='project.extddesc')
     .form-group
       label(for='screenshotthumb') Screenshot Thumbnail
       input.form-control(type='url', name='screenshotthumb', ng-model='project.screenshotThumb')
@@ -27,7 +27,7 @@ h3 New Project
       button.form-control.btn.btn-primary(ng-click='addTech(newTech)') Add Tech
   .col-xs-4
     .form-group
-      label(for='role') Extended Desc
+      label(for='role') Role
       input.form-control(type='text', name='role', ng-model='project.role')
     .form-group
       label(for='screenshot') Screenshot Link
@@ -40,7 +40,4 @@ h3 New Project
       input.form-control(type='url', name='linktoapp', ng-model='linkToApp')
 .row
   .col-xs-12
-    .form-group
-      label(for='body') Body
-      textarea.form-control(rows='10', name='body', ng-model='post.body')
-      button.btn.btn-info(ng-click='addPost(post)') Save Post
+  button.btn.btn-info(ng-click='addProject(project)') Save Project

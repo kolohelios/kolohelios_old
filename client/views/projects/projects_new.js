@@ -1,3 +1,4 @@
+//projects_new.js
 'use strict';
 
 angular.module('kolohelios')
@@ -5,5 +6,16 @@ angular.module('kolohelios')
 
   $scope.projects = Project.init();
 
-  console.log('ProjectsNewCtrl');
+  $scope.project = {};
+  $scope.project.techs = [];
+
+  $scope.addTech = function(newTech){
+    $scope.project.techs.push(newTech);
+    $scope.newTech = '';
+  };
+
+  $scope.addProject = function(project){
+    Project.save(project);
+    $scope.project = {};
+  };
 }]);

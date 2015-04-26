@@ -30,6 +30,8 @@ h3 New Post
 .row
   .col-xs-12
     .form-group
-      label(for='body') Body
-      textarea.form-control(rows='10', name='body', ng-model='post.body')
+      label(for='bodytext') Body
+      textarea.form-control(rows='10', name='bodytext', ng-model='post.bodyText')
       button.btn.btn-info(ng-click='addPost(post)') Save Post
+.jumbotron
+  div(markdown='post.bodyText')

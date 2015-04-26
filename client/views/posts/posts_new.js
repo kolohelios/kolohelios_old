@@ -13,12 +13,10 @@ angular.module('kolohelios')
   $scope.addImage = function(newImage){
     $scope.post.images.push(newImage);
     $scope.newImage = '';
-    console.log($scope.post.images);
   };
   $scope.addTag = function(newTag){
     $scope.post.tags.push(newTag);
     $scope.newTag = '';
-    console.log($scope.post.tags);
   };
 
   $scope.addPost = function(post){

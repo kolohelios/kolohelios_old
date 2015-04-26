@@ -1,9 +1,12 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('PostsShowCtrl', ['$scope', 'Post', function($scope, Post){
+.controller('PostsShowCtrl', ['$scope', 'Post', '$stateParams', function($scope, Post, $stateParams){
 
-  $scope.posts = Post.init();
+  $scope.post = {};
 
-  console.log('PostsShowCtrl');
+  var postId = $stateParams.postsId;
+  $scope.post = Post.retrievePost(postId);
+
+  console.log($scope.post.bodyText);
 }]);
