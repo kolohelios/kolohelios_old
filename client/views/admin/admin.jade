@@ -1,6 +1,6 @@
 h3 Admin
-.row
-  .col.s4(ng-hide='activeUser')
+.row(ng-hide='activeUser')
+  .col.s4
     form(name='newPost')
       .form-group
         label(for='email') Email
@@ -10,3 +10,8 @@ h3 Admin
         input.form-control(type='password', name='password', ng-model='user.password')
       .form-group
         button.form-control.btn.btn-primary(ng-click='loginUser(user)') Login
+.row(ng-show='activeUser')
+  .col.s4
+    p: a(ng-click='logout()') Logout
+    p: a(ui-sref='posts.new') New Blog Post
+    p: a(ui-sref='projects.new') New Project

@@ -10,4 +10,9 @@ angular.module('kolohelios')
       console.error(err);
     });
   };
+
+  $scope.logout = function(){
+    User.logout();
+  };
+
 }]);

@@ -1,6 +1,8 @@
-h3 New Post
 .row
-  .col-xs-4
+  .col.s12
+    h3.center New Post
+    hr
+  .col.s4
     form(name='newPost', novalidation)
     .form-group
       label(for='title') Title
@@ -11,7 +13,7 @@ h3 New Post
     .form-group
       label(for='imagethumbnail') Thumbnail
       input.form-control(type='text', name='imagethumbnail', ng-model='post.thumbnailimage')
-  .col-xs-4
+  .col.s4
     .form-group
       p(ng-show='post.tags.length > 0') Tags
       ul
@@ -19,7 +21,7 @@ h3 New Post
       label(for='addtag') Add Tag
       input.form-control(type='text', name='addtag', ng-model='newTag')
       button.form-control.btn.btn-primary(ng-click='addTag(newTag)') Add Tag
-  .col-xs-4
+  .col.s4
     .form-group
       label(for='postdate') Post Date
       input.form-control(type='date' name='postdate', ng-model='post.postDate')
@@ -34,10 +36,13 @@ h3 New Post
       input.form-control(type='text', name='addimage', ng-model='newImage')
       button.form-control.btn.btn-primary(ng-click='addImage(newImage)') Add Image
 .row
-  .col-xs-12
+  .col.s12
     .form-group
       label(for='bodytext') Body
       textarea.form-control(rows='10', name='bodytext', ng-model='post.bodyText')
       button.btn.btn-info(ng-click='addPost(post)') Save Post
-.jumbotron
-  div(markdown='post.bodyText')
+.row
+  .col.s12
+    hr
+    h4.grey-text.center Post Preview
+    div(markdown='post.bodyText')

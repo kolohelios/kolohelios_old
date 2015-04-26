@@ -1,5 +1,5 @@
-nav#nav.deep-purple(ng-controller='NavCtrl')
-  .container
+.navbar-fixed
+  nav#nav.deep-purple(ng-controller='NavCtrl')
     .nav-wrapper
       a.brand-logo(href='#!') Jon Edwards
       ul#nav-mobile.side-nav
@@ -9,32 +9,28 @@ nav#nav.deep-purple(ng-controller='NavCtrl')
           a(ui-sref='contact') Contact
         li
           a(ui-sref='posts.list') Blog
-        li(ng-show='activeUser')
-          a(ui-sref='posts.new') New Post
         li
           a(ui-sref='projects.list') Projects
         li(ng-show='activeUser')
-          a(ui-sref='projects.new') New Project
+          a(ui-sref='admin') Admin
         li(ng-show='activeUser')
           a(ng-click='logout()') Logout
       ul.right.hide-on-med-and-down
         li
           a(ui-sref='home') Home
         li
-          a.dropdown-button(href='#!', data-activates='contact-dropdown') Contact 
-            i.mdi-navigation-arrow-drop-down.right 
+          a.dropdown-button(href='#!' data-activates='contact-dropdown' data-hover='true') Contact
+            i.mdi-navigation-arrow-drop-down.right
         li
           a(ui-sref='posts.list') Blog
-        li(ng-show='activeUser')
-          a(ui-sref='posts.new') New Post
         li
           a(ui-sref='projects.list') Projects
         li(ng-show='activeUser')
-          a(ui-sref='projects.new') New Project
+          a(ui-sref='admin') Admin
         li(ng-show='activeUser')
           a(ng-click='logout()') Logout
-    a.button-collapse(href='#', data-activates='nav-mobile')
-      i.mdi-navigation-menu
+      a.button-collapse(href='#', data-activates='nav-mobile')
+        i.mdi-navigation-menu
 ul#contact-dropdown.dropdown-content
   li: a(href='mailto:jkedwards@me.com') jkedwards@me.com
   li.divider

@@ -1,0 +1,28 @@
+.green.lighten-2.z-depth-1
+  .section
+    .row.center
+      .col.s12
+        h3.center#projectheading Projects
+    .row
+      .col.s12.m4#projectlist(ng-repeat='project in projects track by $index')
+        .card
+          .card-image
+            img.responsive-img(ng-src='{{project.screenshotthumb}}')
+            span.card-title {{project.name}}
+          .card-content
+            p.desc {{project.desc}}
+          .card-action
+            button.btmbutton(ng-click='caseStudy($index)') Case Study
+    .row(ng-show='showProjectView')
+      .col-xs-12.center
+        h3 {{projects[view].name}}
+        h4 Case Study
+      .col-xs-6.center
+        img(ng-src='{{projects[view].screenshot}}')
+      .col-xs-6.center
+        p {{projects[view].extddesc}}
+        p Frameworks:
+        ul
+          li(ng-repeat='tech in projects[view].techs') {{tech}}
+        p Role: {{projects[view].role}}
+        a(ng-href='{{projects[view].linktoapp}}') {{projects[view].linktext}}

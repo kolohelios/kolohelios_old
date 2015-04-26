@@ -2,6 +2,7 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('ProjectsListCtrl', ['$scope', function($scope){
-
+.controller('ProjectsListCtrl', ['$scope', 'Project', function($scope, Project){
+  $scope.projects = Project.init();
+  console.log($scope.projects);
 }]);

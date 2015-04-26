@@ -3,6 +3,9 @@
 angular.module('kolohelios')
 .controller('HomeCtrl', ['$scope', 'Post', '$state', function($scope, Post, $state){
 
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
   $scope.posts = Post.init();
 
   $scope.view = -1;
