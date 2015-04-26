@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('HomeCtrl', ['$scope', 'Post', function($scope, Post){
+.controller('HomeCtrl', ['$scope', 'Post', '$state', function($scope, Post, $state){
 
   $scope.posts = Post.init();
 
@@ -44,4 +44,9 @@ angular.module('kolohelios')
     $scope.view = projectNum;
     $scope.showProjectView = true;
   };
+
+  $scope.showPost = function(post){
+    $state.go('posts.show', {postsId: post.$id});
+  };
+
 }]);

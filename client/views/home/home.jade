@@ -1,35 +1,46 @@
-.parallax-container
+#index-banner.parallax-container
   .section.no-pad-bot
     .container
-      h4.center.white-text Jon Edwards is a junior web developer with experience in the MEAN stack.
+        h4 Jon Edwards is a junior web developer with experience in the MEAN stack.
       .row.center
-        .col.s12.col.m3
-          img.responsive-img.img-rounded#photo(src='/assets/photo.png', alt='photo of Jon Edwards')
-        .col.s12.m9
-          h5.center.col.s12.text-lighten-2 I have experience with the following technologies:
-          ul#list
-            li.fa.fa-check-square &nbsp;Mongo.db
-            li.fa.fa-check-square &nbsp;Express
-            li.fa.fa-check-square &nbsp;Angular.js
-            li.fa.fa-check-square &nbsp;Node.js
-            li.fa.fa-check-square &nbsp;jQuery
-            li.fa.fa-check-square &nbsp;Bootstrap
-          h4 and languages:
-          ul#list
-            li.fa.fa-check-square &nbsp;JavaScript
-  img('/assets/img_0461.jpg').parallax
-.parallax-container.intro.green.lighten-2.z-depth-1
+        .container
+          .col.s12.m3
+            img.responsive-img#photo(src='/assets/photo.png', alt='photo of Jon Edwards')
+          .col.s12.m9.center
+            h5.grey-text I have experience with the following technologies:
+            ul#list
+              //li.fa.fa-check-square &nbsp;Mongo.db
+              //li.fa.fa-check-square &nbsp;Express
+              li.fa.fa-check-square &nbsp;Angular.js
+              //li.fa.fa-check-square &nbsp;Node.js
+              li.fa.fa-check-square &nbsp;jQuery
+              li.fa.fa-check-square &nbsp;Bootstrap
+              li.fa.fa-check-square &nbsp;Materialize.css
+              li.fa.fa-check-square &nbsp;Firebase
+              li.fa.fa-check-square &nbsp;HTML5/CSS3
+            h5.grey-text and languages:
+            ul#list
+              li.fa.fa-check-square &nbsp;JavaScript
+      .row.center
+        .col.s12
+          h5.red-text I'll be ready for a full-time gig after 6/8.
+  .parallax
+    img(src='/assets/img_0461.jpg')
+.green.lighten-2.z-depth-1
   .section
     .row.center
       .col.s12
-          h3.center#projectheading Projects
+        h3.center#projectheading Projects
     .row
-      .col.s4#projectlist(ng-repeat='project in projects track by $index')
-        h4.project-head {{project.name}}
-        img.responsive-img(ng-src='{{project.screenshotthumb}}')
-        p.desc {{project.desc}}
-        button.btmbutton(ng-click='caseStudy($index)') Case Study
-    img(src='/assets/img_0461.jpg').parallax
+      .col.s12.m4#projectlist(ng-repeat='project in projects track by $index')
+        .card
+          .card-image
+            img.responsive-img(ng-src='{{project.screenshotthumb}}')
+            span.card-title {{project.name}}
+          .card-content
+            p.desc {{project.desc}}
+          .card-action
+            button.btmbutton(ng-click='caseStudy($index)') Case Study
     .row(ng-show='showProjectView')
       .col-xs-12.center
         h3 {{projects[view].name}}
@@ -43,17 +54,22 @@
           li(ng-repeat='tech in projects[view].techs') {{tech}}
         p Role: {{projects[view].role}}
         a(ng-href='{{projects[view].linktoapp}}') {{projects[view].linktext}}
-.parallax-container.intro.purple.lighten-2.z-depth-1
-  .col.s12.m6.center#posts
-    h3 Blog Posts
-    .card(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
-      .card-image
-        img(ng-src='{{post.thumbnailimage}}')
-        .card-title {{post.title}}
-      .card-content
-        p Date: {{post.postDate | date: 'dd MMM yyyy'}}
-        p {{post.blurb}}
-        p Tags: {{post.tags.join(' | ')}}
-      .card-action
-        a(ng-click='showPost(post)') Read more
-      
+.parallax-container.valign-wrapper
+  .section.no-pad-bot
+    .container
+      .row.center
+        h3 Blog Posts
+      .row
+        .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
+          .card
+            .card-image
+              img(ng-src='{{post.thumbnailimage}}')
+              .card-title {{post.title}}
+            .card-content
+              p Date: {{post.postDate | date: 'dd MMM yyyy'}}
+              p {{post.blurb}}
+              p Tags: {{post.tags.join(' | ')}}
+            .card-action
+              a(ng-click='showPost(post)') Read more
+  .parallax
+    img(src='/assets/seattle.jpg')

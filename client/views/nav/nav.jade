@@ -11,6 +11,10 @@ nav#nav.deep-purple(ng-controller='NavCtrl')
           a(ui-sref='posts.list') Blog
         li(ng-show='activeUser')
           a(ui-sref='posts.new') New Post
+        li
+          a(ui-sref='projects.list') Projects
+        li(ng-show='activeUser')
+          a(ui-sref='projects.new') New Project
         li(ng-show='activeUser')
           a(ng-click='logout()') Logout
       ul.right.hide-on-med-and-down
@@ -23,6 +27,10 @@ nav#nav.deep-purple(ng-controller='NavCtrl')
           a(ui-sref='posts.list') Blog
         li(ng-show='activeUser')
           a(ui-sref='posts.new') New Post
+        li
+          a(ui-sref='projects.list') Projects
+        li(ng-show='activeUser')
+          a(ui-sref='projects.new') New Project
         li(ng-show='activeUser')
           a(ng-click='logout()') Logout
     a.button-collapse(href='#', data-activates='nav-mobile')

@@ -1,6 +1,6 @@
 .row
   .col.s12
-    .jumbotron
+    .container
       h2 {{post.title}}
       div(markdown='post.bodyText')
       img(ng-repeat='image in post.images', ng-src='{{image}}')
