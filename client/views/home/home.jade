@@ -1,32 +1,32 @@
 .parallax-container
   .parallax
     img(src='/assets/seattle.jpg')
-  h4 Jon Edwards is a junior web developer with experience in the MEAN stack.
-    .row.center
-      .container
-        .col.s12.m3
-          img.responsive-img#photo(src='/assets/photo.png', alt='photo of Jon Edwards')
-        .col.s12.m9.center
-          h5.grey-text I have experience with the following technologies:
-          ul#list
-            //li.fa.fa-check-square &nbsp;Mongo.db
-            //li.fa.fa-check-square &nbsp;Express
-            li.fa.fa-check-square &nbsp;Angular.js
-            //li.fa.fa-check-square &nbsp;Node.js
-            li.fa.fa-check-square &nbsp;jQuery
-            li.fa.fa-check-square &nbsp;Bootstrap
-            li.fa.fa-check-square &nbsp;Materialize.css
-            li.fa.fa-check-square &nbsp;Firebase
-            li.fa.fa-check-square &nbsp;HTML5/CSS3
-          h5.grey-text and languages:
-          ul#list
-            li.fa.fa-check-square &nbsp;JavaScript
-    .row.center
+  .container
+    h2#heroheadline.lime-text.text-accent-2.center.flow-text Jon Edwards is a junior web developer with experience in the MEAN stack.
+    img.responsive-img(src='/assets/photo.png', alt='photo of Jon Edwards')
+.section.white
+  .row.center
+    .container
       .col.s12
-        h5.red-text I'll be ready for a full-time gig after 6/8.
-.container.green.lighten-2.z-depth-1
-
-  .section
+        h5.grey-text I have experience with the following technologies:
+        ul#list
+          //li.fa.fa-check-square &nbsp;Mongo.db
+          //li.fa.fa-check-square &nbsp;Express
+          li.fa.fa-check-square &nbsp;Angular.js
+          //li.fa.fa-check-square &nbsp;Node.js
+          li.fa.fa-check-square &nbsp;jQuery
+          li.fa.fa-check-square &nbsp;Bootstrap
+          li.fa.fa-check-square &nbsp;Materialize.css
+          li.fa.fa-check-square &nbsp;Firebase
+          li.fa.fa-check-square &nbsp;HTML5/CSS3
+        h5.grey-text and languages:
+        ul#list
+          li.fa.fa-check-square &nbsp;JavaScript
+          li.fa.fa-check-square &nbsp;C++
+  .row.center
+    .col.s12
+      h5.red-text I'll be ready for a full-time gig after 6/8.
+.section.lime.accent-2.z-depth-1
     .row.center
       .col.s12
         h3.center#projectheading Projects
@@ -40,39 +40,24 @@
             p.desc {{project.desc}}
           .card-action
             button.btmbutton(ng-click='caseStudy($index)') Case Study
-    .row(ng-show='showProjectView')
-      .col-xs-12.center
-        h3 {{projects[view].name}}
-        h4 Case Study
-      .col-xs-6.center
-        img(ng-src='{{projects[view].screenshot}}')
-      .col-xs-6.center
-        p {{projects[view].extddesc}}
-        p Frameworks:
-        ul
-          li(ng-repeat='tech in projects[view].techs') {{tech}}
-        p Role: {{projects[view].role}}
-        a(ng-href='{{projects[view].linktoapp}}') {{projects[view].linktext}}
 .parallax-container.valign-wrapper
   .parallax
     img(src='/assets/img_0461.jpg')
-  .section.no-pad-bot
-    .container
-      .row.center
-        h3 Blog Posts
-      .row
-        .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
-          .card
-            .card-image
-              img(ng-src='{{post.thumbnailimage}}')
-              .card-title {{post.title}}
-            .card-content
-              p Date: {{post.postDate | date: 'dd MMM yyyy'}}
-              p {{post.blurb}}
-              p Tags: {{post.tags.join(' | ')}}
-            .card-action
-              a(ng-click='showPost(post)') Read more
-  
+  .container
+    .row.center
+      h3 Blog Posts
+    .row
+      .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
+        .card
+          .card-image
+            img(ng-src='{{post.thumbnailimage}}')
+            .card-title {{post.title}}
+          .card-content
+            p Date: {{post.postDate | date: 'dd MMM yyyy'}}
+            p {{post.blurb}}
+            p Tags: {{post.tags.join(' | ')}}
+          .card-action
+            a(ng-click='showPost(post)') Read more
 .green.lighten-2.z-depth-1
   .section
     .row
