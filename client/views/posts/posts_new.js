@@ -1,3 +1,4 @@
+//posts_new.js
 'use strict';
 
 angular.module('kolohelios')
@@ -11,6 +12,7 @@ angular.module('kolohelios')
   $scope.post.images = [];
 
   $scope.addImage = function(newImage){
+    console.log('newImage: ', newImage, 'images: ', $scope.post.images);
     $scope.post.images.push(newImage);
     $scope.newImage = '';
   };
@@ -20,7 +22,9 @@ angular.module('kolohelios')
   };
 
   $scope.addPost = function(post){
+    $scope.post.postDate = $scope.post.postDate.getTime();
     Post.save(post);
+    $scope.post = {};
   };
 
 }]);

@@ -1,7 +1,7 @@
 h3 New Post
 .row
   .col-xs-4
-    form(name='newPost')
+    form(name='newPost', novalidation)
     .form-group
       label(for='title') Title
       input.form-control(type='text', name='title', ng-model='post.title')
@@ -21,11 +21,17 @@ h3 New Post
       button.form-control.btn.btn-primary(ng-click='addTag(newTag)') Add Tag
   .col-xs-4
     .form-group
+      label(for='postdate') Post Date
+      input.form-control(type='date' name='postdate', ng-model='post.postDate')
+    .form-group
+      label(for='isdraft') Is Draft?
+      input.form-control(type='checkbox', name='isdraft', ng-model='post.isDraft')
+    .form-group
       p(ng-show='post.images.length > 0') Images
       ul
         li(ng-repeat='image in post.images') {{image}}
       label(for='addimage') Add Image
-      input.form-control(type='url', name='addimage', ng-model='newImage')
+      input.form-control(type='text', name='addimage', ng-model='newImage')
       button.form-control.btn.btn-primary(ng-click='addImage(newImage)') Add Image
 .row
   .col-xs-12

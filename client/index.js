@@ -6,6 +6,7 @@ angular.module('kolohelios', ['firebase', 'ui.router', 'markdown', 'ngSanitize']
 
   $stateProvider
   .state('home', {url: '/', templateUrl: '/views/home/home.html', controller: 'HomeCtrl'})
+  .state('contact', {url: '/contact', templateUrl: '/views/home/contact.html'})
   .state('admin', {url: '/admin', templateUrl: '/views/admin/admin.html', controller: 'AdminCtrl'})
 
   .state('posts', {url: '/posts', templateUrl: '/views/posts/posts.html', abstract: true})
@@ -22,4 +23,6 @@ angular.module('kolohelios', ['firebase', 'ui.router', 'markdown', 'ngSanitize']
 .run(['$rootScope', '$window', '$firebaseAuth', 'firebaseUrl', function($rootScope, $window, $firebaseAuth, firebaseUrl){
   $rootScope.fbRoot = new $window.Firebase(firebaseUrl);
   $rootScope.afAuth = $firebaseAuth($rootScope.fbRoot);
+  $('.button-collapse').sideNav({ closeOnClick: true });
+  $('.dropdown-button').dropdown({ hover: false });
 }]);

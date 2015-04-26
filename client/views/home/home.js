@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('HomeCtrl', ['$scope', function($scope){
+.controller('HomeCtrl', ['$scope', 'Post', function($scope, Post){
+
+  $scope.posts = Post.init();
+
   $scope.view = -1;
   $scope.showProjectView = false;
   $scope.projects = [

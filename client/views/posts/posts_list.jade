@@ -1,17 +1,26 @@
-h3 Post List
-
-.row#postslist
-  .col-xs-12
+.row
+  .col.s12.m6#posts
+    .card(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
+      .card-image
+        img(ng-src='{{post.thumbnailimage}}')
+        .card-title {{post.title}}
+      .card-content
+        p Date: {{post.postDate | date: 'dd MMM yyyy'}}
+        p {{post.blurb}}
+        p Tags: {{post.tags.join(' | ')}}
+      .card-action
+        a(ng-click='showPost(post)') Read more
+  .col.s12.m6#postslist
     table.table.table-striped
       thead
         tr
-          th Title
-          th Blurb
-          th Tags
           th Thumbnail
+          th Title
+          th Date
+          th Tags
       tbody
-        tr(ng-repeat='post in posts', ng-click='showPost(post)')
+        tr(ng-repeat='post in posts', ng-click='showPost(post)', ng-if='(post.isDraft !== true || activeUser) && $index > 2')
+          td: img.thumbnail(ng-src='{{post.thumbnailimage}}')
           td {{post.title}}
-          td {{post.blurb}}
+          td {{post.postDate | date: 'dd MMM yyyy'}}
           td {{post.tags}}
-          td: img(ng-src='{{post.thumbnailimage}}')
