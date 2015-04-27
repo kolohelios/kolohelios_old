@@ -2,7 +2,12 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('ProjectsListCtrl', ['$scope', 'Project', function($scope, Project){
+.controller('ProjectsListCtrl', ['$scope', 'Project', '$state', function($scope, Project, $state){
   $scope.projects = Project.init();
-  console.log($scope.projects);
+
+  $scope.editProject = function(project){
+    $state.go('projects.edit', {projectsId: project.$id});
+  }
+
+
 }]);

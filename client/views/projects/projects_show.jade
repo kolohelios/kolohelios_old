@@ -1,13 +1,13 @@
 .row(ng-show='showProjectView')
   .col-xs-12.center
-    h3 {{projects[view].name}}
+    h3 {{project.name}}
     h4 Case Study
   .col-xs-6.center
-    img(ng-src='{{projects[view].screenshot}}')
+    img(ng-src='{{project.screenshot}}')
   .col-xs-6.center
-    p {{projects[view].extddesc}}
+    p {{project.extddesc}}
     p Frameworks:
     ul
-      li(ng-repeat='tech in projects[view].techs') {{tech}}
-    p Role: {{projects[view].role}}
-    a(ng-href='{{projects[view].linktoapp}}') {{projects[view].linktext}}
+      li(ng-repeat='tech in project.techs') {{tech}}
+    p Role: {{project.role}}
+    a(ng-href='{{project.linktoapp}}') {{project.linktext}}

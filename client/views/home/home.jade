@@ -1,8 +1,8 @@
 .parallax-container
   .parallax
-    img(src='/assets/seattle.jpg')
+    img#heroimage(src='/assets/seattle.jpg')
   .container
-    h2#heroheadline.lime-text.text-accent-2.center.flow-text Jon Edwards is a junior web developer with experience in the MEAN stack.
+    h2#heroheadline.green-text.text-lighten-2.center.flow-text Jon Edwards is a junior web developer with experience in the MEAN stack.
     img.responsive-img(src='/assets/photo.png', alt='photo of Jon Edwards')
 .section.white
   .row.center
@@ -26,13 +26,13 @@
   .row.center
     .col.s12
       h5.red-text I'll be ready for a full-time gig after June 8.
-.section.lime.accent-2.z-depth-1
+.section.green.lighten-2.z-depth-1
     .row.center
       .col.s12
         h3.center.heading Projects
     .row
       .col.s12.m4#projectlist(ng-repeat='project in projects track by $index')
-        .card
+        .card.z-depth-3
           .card-image
             img.responsive-img(ng-src='{{project.screenshotthumb}}')
             span.card-title {{project.name}}
@@ -45,11 +45,11 @@
     img(src='/assets/img_0461.jpg')
   .container
     .row
-      h3.center.heading.lime-text.accent-2 Blog Posts
+      h3.center.heading.black-text Blog Posts
     .row
       .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
         .card.black-text
-          .card-image
+          div.card-image.borderfix
             img(ng-src='{{post.thumbnailimage}}')
             .card-title {{post.title}}
           .card-content
@@ -58,7 +58,7 @@
             p Tags: {{post.tags.join(' | ')}}
           .card-action
             a(ng-click='showPost(post)') Read more
-.deep-purple.accent-2.z-depth-1
+.deep-purple.z-depth-1
   .section
     .row
       .col.s12.m6.center

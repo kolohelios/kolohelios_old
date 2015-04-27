@@ -1,6 +1,9 @@
-h3 New Project
 .row
-  form(name='newProject')
+  .col.s12.center
+    h3.heading(ng-hide='projectId') Create Project
+    h3.heading(ng-show='projectId') Edit Project
+.row
+  form(name='recordProject')
   .col.s4
     p.input-field
       label(for='name') Name
@@ -13,9 +16,11 @@ h3 New Project
       textarea(name='extddesc' ng-model='project.extddesc')
     p.input-field
       label(for='screenshotthumb') Screenshot Thumbnail
-      input(type='url', name='screenshotthumb', ng-model='project.screenshotThumb')
+      input(type='text', name='screenshotthumb', ng-model='project.screenshotThumb')
   .col.s4
-    input(type='checkbox' name='topthree' ng-model='project.topThree')
+    p.input-field
+      label(for='topthree') Top Three?
+      input.chbox(type='checkbox' name='topthree' ng-model='project.topThree')
     p(ng-show='project.techs.length > 0') Techs
       ul
         li(ng-repeat='tech in project.techs') {{tech}}
@@ -28,14 +33,16 @@ h3 New Project
       input(type='text' name='role' ng-model='project.role')
     p.input-field
       label(for='screenshot') Screenshot Link
-      input(type='url' name='screenshot' ng-model='screenshot')
+      input(type='text' name='screenshot' ng-model='project.screenshot')
     p.input-field
       label(for='linktext') Link Text
-      input(type='text' name='linktext' ng-model='linkText')
+      input(type='text' name='linktext' ng-model='project.linkText')
     p.input-field
       label(for='linktoapp') Link to App
-      input(type='url' name='linktoapp' ng-model='linkToApp')
+      input(type='url' name='linktoapp' ng-model='project.linkToApp')
 .row
   .col-xs-12.center
-    button.waves-effect.waves-light.btn-large(ng-click='addProject(project)' width='100%') Save Project
+    button.waves-effect.waves-light.btn-large(ng-hide='projectId' ng-click='addProject(project)' width='100%') Add Project
+      i.mdi-content-send.right
+    button.waves-effect.waves-light.btn-large(ng-show='projectId' ng-click='saveProject(project)' width='100%') Save Project
       i.mdi-content-send.right

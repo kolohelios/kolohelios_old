@@ -13,6 +13,7 @@
             p.desc {{project.desc}}
           .card-action
             button.btmbutton(ng-click='caseStudy($index)') Case Study
+            button(ng-show='activeUser' ng-click='editProject(project)') Edit Project
     .row(ng-show='showProjectView')
       .col-xs-12.center
         h3 {{projects[view].name}}

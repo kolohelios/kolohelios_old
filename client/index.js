@@ -16,8 +16,9 @@ angular.module('kolohelios', ['firebase', 'ui.router', 'markdown', 'ngSanitize']
 
   .state('projects', {url: '/projects', templateUrl: '/views/projects/projects.html', abstract: true})
   .state('projects.list', {url: '', templateUrl: '/views/projects/projects_list.html', controller: 'ProjectsListCtrl'})
-  .state('projects.new', {url: '/new', templateUrl: '/views/projects/projects_new.html', controller: 'ProjectsNewCtrl'})
-  .state('projects.show', {url: '/{projectsId}', templateUrl: '/views/projects/projects_show.html', controller: 'ProjectsShowCtrl'});
+  .state('projects.new', {url: '/new', templateUrl: '/views/projects/projects_record.html', controller: 'ProjectsRecordCtrl'})
+  .state('projects.show', {url: '/{projectsId}', templateUrl: '/views/projects/projects_show.html', controller: 'ProjectsShowCtrl'})
+  .state('projects.edit', {url: '/{projectsId}', templateUrl: '/views/projects/projects_record.html', controller: 'ProjectsRecordCtrl'});
 
 }])
 .run(['$rootScope', '$window', '$firebaseAuth', 'firebaseUrl', function($rootScope, $window, $firebaseAuth, firebaseUrl){
