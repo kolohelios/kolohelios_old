@@ -1,17 +1,18 @@
 .green.lighten-2
   .row
-    .col.s12.m4#posts
-      .card(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
+    .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index <= 2')
+      .card
         .card-image
           img(ng-src='{{post.thumbnailimage}}')
-          .card-title {{post.title}}
+          .card-title.black-text {{post.title}}
         .card-content
           p Date: {{post.postDate | date: 'dd MMM yyyy'}}
           p {{post.blurb}}
           p Tags: {{post.tags.join(' | ')}}
         .card-action
           a(ng-click='showPost(post)') Read more
-    .col.s12.m8#postslist
+  .row
+    .col.s12#postslist
       .section
         table.table.table-striped.green
           thead
@@ -21,8 +22,8 @@
               th Date
               th Tags
           tbody
-            tr(ng-repeat='post in posts', ng-click='showPost(post)', ng-if='(post.isDraft !== true || activeUser) && $index > 2')
-              td: img.thumbnail(ng-src='{{post.thumbnailimage}}')
+            tr(ng-repeat='post in posts | orderBy:"-postDate"', ng-click='showPost(post)', ng-if='(post.isDraft !== true || activeUser) && $index > 2')
+              td: img.thumbnail(ng-src='{{post.thumbnailimage}}' width='100px')
               td {{post.title}}
               td {{post.postDate | date: 'dd MMM yyyy'}}
               td {{post.tags}}
