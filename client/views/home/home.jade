@@ -8,7 +8,7 @@
   .row.center
     .container
       .col.s12
-        h5.grey-text I have experience with the following technologies:
+        h4.grey-text I have experience with the following technologies:
         ul#list
           //li.fa.fa-check-square &nbsp;Mongo.db
           //li.fa.fa-check-square &nbsp;Express
@@ -19,17 +19,17 @@
           li.fa.fa-check-square &nbsp;Materialize.css
           li.fa.fa-check-square &nbsp;Firebase
           li.fa.fa-check-square &nbsp;HTML5/CSS3
-        h5.grey-text and languages:
+        h4.grey-text and languages:
         ul#list
           li.fa.fa-check-square &nbsp;JavaScript
           li.fa.fa-check-square &nbsp;C++
   .row.center
     .col.s12
-      h5.red-text I'll be ready for a full-time gig after 6/8.
+      h5.red-text I'll be ready for a full-time gig after June 8.
 .section.lime.accent-2.z-depth-1
     .row.center
       .col.s12
-        h3.center#projectheading Projects
+        h3.center.heading Projects
     .row
       .col.s12.m4#projectlist(ng-repeat='project in projects track by $index')
         .card
@@ -44,11 +44,11 @@
   .parallax
     img(src='/assets/img_0461.jpg')
   .container
-    .row.center
-      h3 Blog Posts
+    .row
+      h3.center.heading.lime-text.accent-2 Blog Posts
     .row
       .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
-        .card
+        .card.black-text
           .card-image
             img(ng-src='{{post.thumbnailimage}}')
             .card-title {{post.title}}
@@ -58,7 +58,7 @@
             p Tags: {{post.tags.join(' | ')}}
           .card-action
             a(ng-click='showPost(post)') Read more
-.green.lighten-2.z-depth-1
+.deep-purple.accent-2.z-depth-1
   .section
     .row
       .col.s12.m6.center
@@ -68,3 +68,6 @@
         a.twitter-timeline(href="https://twitter.com/kolohelios" data-widget-id="592404995988848640") Tweets by @kolohelios
         script
           !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+.parallax-container.valign-wrapper
+  .parallax
+    img(src='/assets/museumofflight.jpg')

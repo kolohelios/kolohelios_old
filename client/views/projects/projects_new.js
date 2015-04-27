@@ -7,6 +7,7 @@ angular.module('kolohelios')
   $scope.projects = Project.init();
 
   $scope.project = {};
+  $scope.project.isTopThree = true;
   $scope.project.techs = [];
 
   $scope.addTech = function(newTech){

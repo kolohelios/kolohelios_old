@@ -1,43 +1,41 @@
 h3 New Project
 .row
-  .col-xs-4
-    form(name='newProject')
-    .form-group
+  form(name='newProject')
+  .col.s4
+    p.input-field
       label(for='name') Name
-      input.form-control(type='text', name='name', ng-model='project.name')
-    .form-group
+      input(type='text' name='name' ng-model='project.name')
+    p.input-field
       label(for='desc') Desc
-      input.form-control(type='text', name='desc', ng-model='project.desc')
-    .form-group
+      input(type='text' name='desc' ng-model='project.desc')
+    p.input-field
       label(for='extddesc') Extended Desc
-      textarea.form-control(name='extddesc', ng-model='project.extddesc')
-    .form-group
+      textarea(name='extddesc' ng-model='project.extddesc')
+    p.input-field
       label(for='screenshotthumb') Screenshot Thumbnail
-      input.form-control(type='url', name='screenshotthumb', ng-model='project.screenshotThumb')
-  .col-xs-4
-    .form-group
-      label(for='topthree') Top Three?
-      input.form-control(type='checkbox', name='topthree' ng-model='project.topThree')
-    .form-group
-      p(ng-show='project.techs.length > 0') Techs
+      input(type='url', name='screenshotthumb', ng-model='project.screenshotThumb')
+  .col.s4
+    input(type='checkbox' name='topthree' ng-model='project.topThree')
+    p(ng-show='project.techs.length > 0') Techs
       ul
         li(ng-repeat='tech in project.techs') {{tech}}
-      label(for='addtech') Add Tech
-      input.form-control(type='text', name='addtech', ng-model='newTech')
-      button.form-control.btn.btn-primary(ng-click='addTech(newTech)') Add Tech
-  .col-xs-4
-    .form-group
+        label(for='addtech') Add Tech
+        input(type='text' name='addtech' ng-model='newTech')
+      button.waves-effect.waves-light.btn-large(ng-click='addTech(newTech)') Add Tech
+  .col.s4
+    p.input-field
       label(for='role') Role
-      input.form-control(type='text', name='role', ng-model='project.role')
-    .form-group
+      input(type='text' name='role' ng-model='project.role')
+    p.input-field
       label(for='screenshot') Screenshot Link
-      input.form-control(type='url', name='screenshot', ng-model='screenshot')
-    .form-group
+      input(type='url' name='screenshot' ng-model='screenshot')
+    p.input-field
       label(for='linktext') Link Text
-      input.form-control(type='text', name='linktext', ng-model='linkText')
-    .form-group
+      input(type='text' name='linktext' ng-model='linkText')
+    p.input-field
       label(for='linktoapp') Link to App
-      input.form-control(type='url', name='linktoapp', ng-model='linkToApp')
+      input(type='url' name='linktoapp' ng-model='linkToApp')
 .row
-  .col-xs-12
-  button.btn.btn-info(ng-click='addProject(project)') Save Project
+  .col-xs-12.center
+    button.waves-effect.waves-light.btn-large(ng-click='addProject(project)' width='100%') Save Project
+      i.mdi-content-send.right
