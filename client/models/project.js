@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kolohelios')
-.factory('Project', ['$rootScope', '$firebaseArray', '$firebaseObject', function($rootScope, $firebaseArray, $firebaseObject){
+.factory('Project', ['$rootScope', '$firebaseArray', function($rootScope, $firebaseArray){
 
   var fbProjects;
   var afProjects;
@@ -16,15 +16,9 @@ angular.module('kolohelios')
     return afProjects.$add(project);
   }
 
-  function retrieveProject(project){
-    var fbProject =$rootScope.fbRoot.child('projects/' + project);
-    var afProject = $firebaseObject(fbProject);
-    return afProject;
-  }
-
   function save(project){
     return afProjects.$save(project);
   }
 
-  return {init: init, add: add, retrieveProject: retrieveProject, save: save};
+  return {init: init, add: add, save: save};
 }]);

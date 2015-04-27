@@ -1,7 +1,8 @@
+// views/admin/admin.js
 'use strict';
 
 angular.module('kolohelios')
-.controller('AdminCtrl', ['$scope', 'User', '$rootScope', function($scope, User, $rootScope){
+.controller('AdminCtrl', ['$scope', 'User', function($scope, User){
 
   $scope.loginUser = function(user){
     User.login(user)

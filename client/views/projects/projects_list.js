@@ -7,7 +7,5 @@ angular.module('kolohelios')
 
   $scope.editProject = function(project){
     $state.go('projects.edit', {projectsId: project.$id});
-  }
-
-
+  };
 }]);
