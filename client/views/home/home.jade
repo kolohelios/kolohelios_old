@@ -6,8 +6,8 @@
       h1#heroheadline.center Jon Edwards is a junior web developer with an analytical mind and a keen eye for detail.
       img.responsive-img(src='/assets/photo.png', alt='photo of Jon Edwards')
   .section.firstsection
-    .row.center
-      .container
+    .container
+      .row.center
         .col.s12
           h3 I have experience with the following technologies:
           .row
@@ -56,8 +56,11 @@
                 figure
                   img.techlogos(src='assets/cplusplus.png' alt='C++ logo')
                   figcaption C++
-  .section.secondsection
-      .row.center
+  .parallax-container.valign-wrapper
+    .parallax
+      img(src='/assets/img_0461.jpg')
+    .container
+      .row
         .col.s12
           h2.center.heading Projects
       .row
@@ -70,11 +73,9 @@
               p.desc {{project.desc}}
             .card-action
               button.btmbutton(ng-click='caseStudy($index)') Case Study
-  .parallax-container.valign-wrapper
-    .parallax
-      img(src='/assets/img_0461.jpg')
+  .section.secondsection
     .container
-      .row
+      .row.center
         h2.center Blog Posts
       .row
         .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
@@ -88,8 +89,10 @@
               p Tags: {{post.tags.join(' | ')}}
             .card-action
               a(ng-click='showPost(post)') Read more
-  .fourthsection
-    .section
+  .parallax-container.valign-wrapper
+    .parallax.fourthsection
+      img(src='/assets/museumofflight.jpg')
+    .container
       .row
         h2.center Social Profile
         .col.s12.m6.center
@@ -99,10 +102,9 @@
           a.twitter-timeline(href='https://twitter.com/kolohelios' data-widget-id='592404995988848640' data-chrome='noscrollbar nofooter noborders' data-tweet-limit='3') Tweets by @kolohelios
           script
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  .parallax-container.valign-wrapper
-    .parallax
-      img(src='/assets/museumofflight.jpg')
+  .section.fifthsection
     .container
-      .col.s8.offset-s2
-        .card-panel.hireme.z-depth-3.center
-          h4.hireme.flow-text I'll be ready for a full-time gig after June 8.
+      .row
+        .col.s8.offset-s2
+          .card-panel.hireme.z-depth-3.center
+            h4.hireme.flow-text I'll be ready for a full-time gig after June 8.
