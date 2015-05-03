@@ -1,16 +1,16 @@
-.green.lighten-2.z-depth-1
+.primarysection
   .section
     .row.center
       .col.s12
-        h3.center#projectheading.heading Projects
+        h2 Projects
     .row
-      .col.s12.m4#projectlist.center(ng-repeat='project in projects track by $index')
-        .card
+      .col.s12.m4.center(ng-repeat='project in projects track by $index')
+        .card.z-depth-3
           .card-image
             img.responsive-img(ng-src='{{project.screenshotThumb}}')
           .card-content
-            span.card-title.flex-text {{project.name}}
+            h4.flex-text {{project.name | uppercase}}
             p.desc {{project.desc}}
           .card-action.center
-            a.waves-effect.waves-light.btn.deep-purple(ui-sref='projects.show({project: project.name})') Case Study
-            button.blue(ng-show='activeUser' ng-click='editProject(project)') Edit Project
+            a.waves-effect.waves-light.btn(ui-sref='projects.show({project: project.name})') Case Study
+            a.waves-effect.waves-light.btn(ui-sref='projects.edit({project: project.name})') Edit Project

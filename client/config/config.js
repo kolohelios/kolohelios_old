@@ -19,5 +19,5 @@ angular.module('kolohelios')
   .state('projects.list', {url: '', templateUrl: '/views/projects/projects_list.html', controller: 'ProjectsListCtrl'})
   .state('projects.new', {url: '/new', templateUrl: '/views/projects/projects_record.html', controller: 'ProjectsRecordCtrl'})
   .state('projects.show', {url: '/{project}', templateUrl: '/views/projects/projects_show.html', controller: 'ProjectsShowCtrl'})
-  .state('projects.edit', {url: '/{project}', templateUrl: '/views/projects/projects_record.html', controller: 'ProjectsRecordCtrl'});
+  .state('projects.edit', {url: '/{project}/edit', templateUrl: '/views/projects/projects_record.html', controller: 'ProjectsRecordCtrl'});
 }]);

@@ -2,22 +2,26 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('ProjectsRecordCtrl', ['$scope', 'Project', '$stateParams', function($scope, Project, $stateParams){
+.controller('ProjectsRecordCtrl', ['$scope', 'Project', '$state', function($scope, Project, $state){
 
-  //$scope.projects = Project.init();
+  $scope.projectId = $state.params.project;
 
-  $scope.project = Project.init();
-
-  $scope.project = {};
-  $scope.project.techs = [];
-  $scope.projectId = null;
-
-  if($stateParams){
-    $scope.projectId = $stateParams.projectsId;
-    $scope.project.$loaded().then(function(){
-      $scope.project = $scope.project.$getRecord($scope.projectId);
+  if($scope.projectId){
+    $scope.projects = Project.init();
+    $scope.projects.$loaded().then(function(){
+      $scope.projects.forEach(function(obj){
+        console.log(obj.name);
+        if(obj.name === $scope.projectId){
+          $scope.project = obj;
+          $scope.project.techs = $scope.project.techs ? $scope.project.techs : [];
+        }
+      });
     });
+  }else{
+    $scope.project = {};
+    $scope.project.techs = [];
   }
+
 
   $scope.addTech = function(newTech){
     $scope.project.techs.push(newTech);
@@ -31,7 +35,7 @@ angular.module('kolohelios')
 
   $scope.saveProject = function(project){
     Project.save(project);
-    $scope.project = {};
+    $state.go('projects.list');
   };
 
 }]);

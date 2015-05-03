@@ -8,6 +8,7 @@ html(lang='en', ng-app='kolohelios')
     //link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/superhero/bootstrap.min.css')
     link(rel='stylesheet' type='text/css' href='/vendor/materialize/dist/css/materialize.min.css' media='screen,projection')
     link(rel='stylesheet' href='/vendor/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet' href='/vendor/sweetalert/lib/sweet-alert.css')
     link(rel='stylesheet' href=isProd ? '/index.min.css' : '/index.css')
     link(rel='shortcut icon' href='/favicon.ico')
   body
@@ -30,6 +31,7 @@ html(lang='en', ng-app='kolohelios')
     script(src='/vendor/showdown/compressed/extensions/prettify.min.js')
     script(src='/vendor/showdown/compressed/extensions/twitter.min.js')
     script(src='/vendor/angular-markdown-text/dist/angular-markdown-text.min.js')
+    script(src='/vendor/sweetalert/lib/sweet-alert.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')
   
     // Google Analytics code

@@ -8,7 +8,52 @@
 @col-altcontrast: RGBA(253, 151, 31, 1); // tree poppy
 @col-neutcontrast: RGBA(118, 122, 130, 1); // storm gray
 @fon-stylistic: 'Waiting for the Sunrise', cursive;
+@fon-heading: 'Times New Roman', Times, serif;
+@fon-text: Helvetica, Arial, sans-serif;
+@fon-accent: Impact, Charcoal, sans-serif;
+@fon-mono: 'Lucida Console', Monaco, monospace;
 
+html{
+  -webkit-font-smoothing: antialiased;
+}
+
+li{
+  font-family: @fon-accent;
+}
+h1{
+  font-family: @fon-stylistic;
+  color: @col-section;
+  font-size: 3rem;
+}
+h2{
+  font-family: @fon-stylistic;
+  text-align: center;
+}
+h3{
+  font-family: @fon-heading;
+}
+h4{
+  color: @col-altcontrast;
+  font-family: @fon-heading;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+}
+p{
+  line-height: 2rem;
+  font-family: @fon-text;
+}
+button, .btn{
+  background-color: @col-splash;
+  color: @col-altcontrast;
+}
+.card .card-content{
+  padding: 0 20px 20px;
+}
+figure{
+  display: inline-block;
+  margin: 10px 0 0;
+}
 nav{
   background-color: @col-splash;
 
@@ -29,11 +74,10 @@ nav{
     color: @col-altsection;
   }
 }
-
-.heading{
-  font-family: 'Waiting for the Sunrise', cursive;
-  font-weight: 900;
+.primarysection{
+  background-color: @col-section;
 }
+
 
 .chbox{
   position: relative !important;
@@ -43,14 +87,17 @@ nav{
 
 #homepage{
 
+  .techlogos{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
+  }
+
   .hero{
     #heroheadline{
-      font-family: @fon-stylistic;
-      font-size: 2.5em;
-      position: relative;
       top: 25px;
-      width: 100%;
-      color: @col-section;
+      position: relative;
+      left: 0;
     }
     #heroimage{
       -webkit-filter: contrast(50%) brightness(50%);
@@ -104,9 +151,7 @@ nav{
   }
 
 }
-p {
-  line-height: 2rem;
-}
+
 
 footer{
   background-color: @col-neutcontrast;
@@ -117,8 +162,4 @@ footer{
 
 .borderfix{
   overflow: visible;
-}
-.card-title{
-  color: @col-altcontrast !important;
-  letter-spacing: 2px;
 }
