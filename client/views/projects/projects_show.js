@@ -2,6 +2,11 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('ProjectsShowCtrl', ['$scope', function($scope){
-  console.log($scope); // remove when $scope is actually used
+.controller('ProjectsShowCtrl', ['$scope', 'Project', '$state', function($scope, Project, $state){
+
+
+  Project.find($state.params.project);
+
+
+
 }]);

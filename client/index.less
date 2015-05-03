@@ -1,74 +1,33 @@
 @import url(http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise);
 
-@purple: rgba(103, 58, 183, 1.0);
-@green: rgba(16, 120, 37, 0.4);
-@gray: rgba(195, 192, 192, 0.67);
+@col-dkcontrast: RGBA(38, 27, 17, 1); // eternity
+@col-splash: RGBA(103, 47, 183, 1); // purple heart
+@col-brcontrast: RGBA(71, 200, 215, 1); // medium turquoise
+@col-section: RGBA(129, 199, 110, 1); // mantis
+@col-altsection: RGBA(234, 247, 254, 1); // solitude
+@col-altcontrast: RGBA(253, 151, 31, 1); // tree poppy
+@col-neutcontrast: RGBA(118, 122, 130, 1); // storm gray
+@fon-stylistic: 'Waiting for the Sunrise', cursive;
 
-nav ul a,
-nav .brand-logo {
-  color: #FFF;
-}
+nav{
+  background-color: @col-splash;
 
-p {
-  line-height: 2rem;
-}
-
-.button-collapse {
-  color: lime;
-}
-
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
+  .button-collapse{
+    color: @col-section;
   }
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
+  .dropdown-content{
+    min-width: 200px;
+    font-size: 18px;
+    color: @col-brcontrast;
+    background-color: @col-dkcontrast;
   }
-  #index-banner .section {
-    top: 10%;
+  .brand-logo{
+    font-family: @fon-stylistic;
+    color: @col-altsection;
   }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
+  ul a {
+    color: @col-altsection;
   }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-
-footer.page-footer {
-  margin: 0;
-}
-
-.brand-logo{
-  font-family: 'Waiting for the Sunrise', cursive;
-}
-
-#heroheadline{
-  font-family: 'Waiting for the Sunrise', cursive;
-  font-size: 2.5em;
-  position: relative;
-  top: 25px;
-  width: 100%;
-}
-
-#heroimage{
-  -webkit-filter: contrast(40%) brightness(50%);
-}
-
-.fa-check-square{
-  margin-right: 15px;
 }
 
 .heading{
@@ -82,11 +41,84 @@ footer.page-footer {
   margin: -5px;
 }
 
+#homepage{
+
+  .hero{
+    #heroheadline{
+      font-family: @fon-stylistic;
+      font-size: 2.5em;
+      position: relative;
+      top: 25px;
+      width: 100%;
+      color: @col-section;
+    }
+    #heroimage{
+      -webkit-filter: contrast(50%) brightness(50%);
+    }
+  }
+  .firstsection{
+    background-color: @col-altsection;
+    h4{
+      color: @col-neutcontrast;
+    }
+    h5{
+      color: @col-altcontrast;
+    }
+  }
+
+  .secondsection{
+    background-color: @col-section;
+    color: @col-dkcontrast;
+  }
+  .thirdsection{
+
+  }
+  .fourthsection{
+    background-color: @col-splash;
+  }
+  .fifthsection{
+
+  }
+  .parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+  }
+    .parallax-container .section {
+      width: 100%;
+    }
+
+  @media only screen and (max-width : 992px) {
+    .parallax-container .section {
+      position: absolute;
+      top: 40%;
+    }
+    #index-banner .section {
+      top: 10%;
+    }
+  }
+  @media only screen and (max-width : 600px) {
+    #index-banner .section {
+      top: 0;
+    }
+  }
+
+}
+p {
+  line-height: 2rem;
+}
+
+footer{
+  background-color: @col-neutcontrast;
+  .page-footer {
+    margin: 0;
+  }
+}
+
 .borderfix{
   overflow: visible;
 }
-
-.dropdown-content{
-  min-width: 200px;
-  font-size: 18px;
+.card-title{
+  color: @col-altcontrast !important;
+  letter-spacing: 2px;
 }

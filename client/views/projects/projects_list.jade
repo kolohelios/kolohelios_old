@@ -2,28 +2,15 @@
   .section
     .row.center
       .col.s12
-        h3.center#projectheading Projects
+        h3.center#projectheading.heading Projects
     .row
-      .col.s12.m4#projectlist(ng-repeat='project in projects track by $index')
+      .col.s12.m4#projectlist.center(ng-repeat='project in projects track by $index')
         .card
           .card-image
-            img.responsive-img(ng-src='{{project.screenshotthumb}}')
-            span.card-title {{project.name}}
+            img.responsive-img(ng-src='{{project.screenshotThumb}}')
           .card-content
+            span.card-title.flex-text {{project.name}}
             p.desc {{project.desc}}
-          .card-action
-            button.btmbutton(ng-click='caseStudy($index)') Case Study
-            button(ng-show='activeUser' ng-click='editProject(project)') Edit Project
-    .row(ng-show='showProjectView')
-      .col-xs-12.center
-        h3 {{projects[view].name}}
-        h4 Case Study
-      .col-xs-6.center
-        img(ng-src='{{projects[view].screenshot}}')
-      .col-xs-6.center
-        p {{projects[view].extddesc}}
-        p Frameworks:
-        ul
-          li(ng-repeat='tech in projects[view].techs') {{tech}}
-        p Role: {{projects[view].role}}
-        a(ng-href='{{projects[view].linktoapp}}') {{projects[view].linktext}}
+          .card-action.center
+            a.waves-effect.waves-light.btn.deep-purple(ui-sref='projects.show({project: project.name})') Case Study
+            button.blue(ng-show='activeUser' ng-click='editProject(project)') Edit Project

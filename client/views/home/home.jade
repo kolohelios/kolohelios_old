@@ -1,73 +1,75 @@
-.parallax-container
-  .parallax
-    img#heroimage(src='/assets/seattle.jpg')
-  .container
-    h2#heroheadline.green-text.text-lighten-2.center.flow-text Jon Edwards is a junior web developer with experience in the MEAN stack.
-    img.responsive-img(src='/assets/photo.png', alt='photo of Jon Edwards')
-.section.white
-  .row.center
-    .container
-      .col.s12
-        h4.grey-text I have experience with the following technologies:
-        ul#list
-          //li.fa.fa-check-square &nbsp;Mongo.db
-          //li.fa.fa-check-square &nbsp;Express
-          li.fa.fa-check-square &nbsp;Angular.js
-          //li.fa.fa-check-square &nbsp;Node.js
-          li.fa.fa-check-square &nbsp;jQuery
-          li.fa.fa-check-square &nbsp;Bootstrap
-          li.fa.fa-check-square &nbsp;Materialize.css
-          li.fa.fa-check-square &nbsp;Firebase
-          li.fa.fa-check-square &nbsp;HTML5/CSS3
-        h4.grey-text and languages:
-        ul#list
-          li.fa.fa-check-square &nbsp;JavaScript
-          li.fa.fa-check-square &nbsp;C++
-  .row.center
-    .col.s12
-      h5.red-text I'll be ready for a full-time gig after June 8.
-.section.green.lighten-2
+#homepage
+  .parallax-container
+    .parallax.hero
+      img#heroimage(src='/assets/seattle.jpg')
+    .container.hero
+      h2#heroheadline.center.flow-text Jon Edwards is a junior web developer with experience in the MEAN stack.
+      img.responsive-img(src='/assets/photo.png', alt='photo of Jon Edwards')
+  .section.firstsection
+    .row.center
+      .container
+        .col.s12
+          h4 I have experience with the following technologies:
+          ul#list
+            //li.fa.fa-check-square &nbsp;Mongo.db
+            //li.fa.fa-check-square &nbsp;Express
+            li.fa.fa-check-square &nbsp;Angular.js
+            //li.fa.fa-check-square &nbsp;Node.js
+            li.fa.fa-check-square &nbsp;jQuery
+            li.fa.fa-check-square &nbsp;Bootstrap
+            li.fa.fa-check-square &nbsp;Materialize.css
+            li.fa.fa-check-square &nbsp;Firebase
+            li.fa.fa-check-square &nbsp;HTML5/CSS3
+          h4 and languages:
+          ul#list
+            li.fa.fa-check-square &nbsp;JavaScript
+            li.fa.fa-check-square &nbsp;C++
     .row.center
       .col.s12
-        h3.center.heading Projects
-    .row
-      .col.s12.m4#projectlist(ng-repeat='project in projects track by $index')
-        .card.z-depth-3
-          .card-image
-            img.responsive-img(ng-src='{{project.screenshotthumb}}')
-            span.card-title {{project.name}}
-          .card-content
-            p.desc {{project.desc}}
-          .card-action
-            button.btmbutton(ng-click='caseStudy($index)') Case Study
-.parallax-container.valign-wrapper
-  .parallax
-    img(src='/assets/img_0461.jpg')
-  .container
-    .row
-      h3.center.heading.black-text Blog Posts
-    .row
-      .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
-        .card.black-text.z-depth-3
-          div.card-image.borderfix
-            img(ng-src='{{post.thumbnailimage}}')
-          .card-content
-            h6.flow-text.card-title.black-text {{post.title}}
-            p Date: {{post.postDate | date: 'dd MMM yyyy'}}
-            p.truncate {{post.blurb}}
-            p Tags: {{post.tags.join(' | ')}}
-          .card-action
-            a(ng-click='showPost(post)') Read more
-.deep-purple.z-depth-1
-  .section
-    .row
-      .col.s12.m6.center
-        script(src="//platform.linkedin.com/in.js" type="text/javascript")
-        script(type="IN/MemberProfile" data-id="https://www.linkedin.com/in/kolohelios" data-format="inline" data-related="false")
-      .col.s12.m6.center
-        a.twitter-timeline(href="https://twitter.com/kolohelios" data-widget-id="592404995988848640") Tweets by @kolohelios
-        script
-          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-.parallax-container.valign-wrapper
-  .parallax
-    img(src='/assets/museumofflight.jpg')
+        h5 I'll be ready for a full-time gig after June 8.
+  .section.secondsection
+      .row.center
+        .col.s12
+          h3.center.heading Projects
+      .row
+        .col.s12.m4#projectlist(ng-repeat='project in projects track by $index')
+          .card.z-depth-3
+            .card-image
+              img.responsive-img(ng-src='{{project.screenshotthumb}}')
+              span.card-title {{project.name}}
+            .card-content
+              p.desc {{project.desc}}
+            .card-action
+              button.btmbutton(ng-click='caseStudy($index)') Case Study
+  .parallax-container.valign-wrapper
+    .parallax
+      img(src='/assets/img_0461.jpg')
+    .container
+      .row
+        h3.center.heading.black-text Blog Posts
+      .row
+        .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
+          .card.black-text.z-depth-3
+            div.card-image.borderfix
+              img(ng-src='{{post.thumbnailimage}}')
+            .card-content
+              h6.flow-text.card-title.black-text {{post.title}}
+              p Date: {{post.postDate | date: 'dd MMM yyyy'}}
+              p.truncate {{post.blurb}}
+              p Tags: {{post.tags.join(' | ')}}
+            .card-action
+              a(ng-click='showPost(post)') Read more
+  .fourthsection
+    .section
+      .row
+        .col.s12.m6.center
+          script(src="//platform.linkedin.com/in.js" type="text/javascript")
+          script(type="IN/MemberProfile" data-id="https://www.linkedin.com/in/kolohelios" data-format="inline" data-related="false")
+            
+        .col.s12.m6.center
+          a.twitter-timeline(href='https://twitter.com/kolohelios' data-widget-id='592404995988848640' data-chrome='noscrollbar nofooter noborders' data-tweet-limit='3') Tweets by @kolohelios
+          script
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  .parallax-container.valign-wrapper
+    .parallax
+      img(src='/assets/museumofflight.jpg')

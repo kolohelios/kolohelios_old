@@ -1,5 +1,5 @@
 .navbar-fixed
-  nav#nav.deep-purple(ng-controller='NavCtrl')
+  nav#nav(ng-controller='NavCtrl')
     .nav-wrapper
       a.brand-logo(href='#!') Jon Edwards
       ul#nav-mobile.side-nav
@@ -29,15 +29,15 @@
           a(ui-sref='admin') Admin
         li(ng-show='activeUser')
           a(ng-click='logout()') Logout
-      a.button-collapse.green-text(href='#', data-activates='nav-mobile')
+      a.button-collapse(href='#', data-activates='nav-mobile')
         i.mdi-navigation-menu
 ul#contact-dropdown.dropdown-content
   li: a(href='mailto:jkedwards@me.com') jkedwards@me.com
   li.divider
-  li: a(href='https://github.com/kolohelios') Github
-  li: a(href='http://twitter.com/kolohelios') Twitter
-  li: a(href='http://www.linkedin.com/in/kolohelios') LinkedIn
-  li: a(href='http://www.facebook.com/kolohelios') Facebook
-  li: a(href='http://www.stackoverflow.com/users/4592962/jon-edwards') StackOverflow
-  li: a(href='https://angel.co/jon-edwards-1') Angel List
-  li: a(href='https://www.quora.com/Jon-Edwards-10') Quora
+  li: a(href='https://github.com/kolohelios' target='_blank') Github
+  li: a(href='http://twitter.com/kolohelios' target='_blank') Twitter
+  li: a(href='http://www.linkedin.com/in/kolohelios' target='_blank') LinkedIn
+  li: a(href='http://www.facebook.com/kolohelios' target='_blank') Facebook
+  li: a(href='http://www.stackoverflow.com/users/4592962/jon-edwards' target='_blank') StackOverflow
+  li: a(href='https://angel.co/jon-edwards-1' target='_blank') Angel List
+  li: a(href='https://www.quora.com/Jon-Edwards-10' target='_blank') Quora

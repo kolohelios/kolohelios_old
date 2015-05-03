@@ -4,7 +4,9 @@
 angular.module('kolohelios')
 .controller('ProjectsRecordCtrl', ['$scope', 'Project', '$stateParams', function($scope, Project, $stateParams){
 
-  $scope.projects = Project.init();
+  //$scope.projects = Project.init();
+
+  $scope.project = Project.init();
 
   $scope.project = {};
   $scope.project.techs = [];
@@ -12,8 +14,8 @@ angular.module('kolohelios')
 
   if($stateParams){
     $scope.projectId = $stateParams.projectsId;
-    $scope.projects.$loaded().then(function(){
-      $scope.project = $scope.projects.$getRecord($scope.projectId);
+    $scope.project.$loaded().then(function(){
+      $scope.project = $scope.project.$getRecord($scope.projectId);
     });
   }
 

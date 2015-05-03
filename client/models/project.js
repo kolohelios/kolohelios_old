@@ -1,24 +1,36 @@
 'use strict';
 
 angular.module('kolohelios')
-.factory('Project', ['$rootScope', '$firebaseArray', function($rootScope, $firebaseArray){
+.factory('Project', ['$rootScope', '$firebaseObject', function($rootScope, $firebaseObject){
 
-  var fbProjects;
-  var afProjects;
+  var fbProject;
+  var afProject;
 
-  function init(){
-    fbProjects = $rootScope.fbRoot.child('projects/');
-    afProjects = $firebaseArray(fbProjects);
-    return afProjects;
-  }
+  function Project() {}
 
-  function add(project){
-    return afProjects.$add(project);
-  }
+  // Project.init = function(projectID){
+  //   fbProject = $rootScope.fbRoot.child('projects/' + projectID);
+  //   afProject = $firebaseObject(fbProject);
+  //   return afProject;
+  // };
 
-  function save(project){
-    return afProjects.$save(project);
-  }
+  Project.save = function(project){
+    return afProject.$save(project);
+  };
 
-  return {init: init, add: add, save: save};
+  Project.find = function(projectName){
+    fbProject = $rootScope.fbRoot.child('projects/');
+    afProject = $firebaseObject(fbProject);
+    afProject.$loaded().then(function(){
+      afProject.forEach(function(obj){
+      if(obj.name === projectName){
+        console.log(obj);
+        $rootScope.project = obj;
+      }
+    });
+  });
+  };
+
+  return Project;
+
 }]);
