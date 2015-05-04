@@ -56,7 +56,7 @@
                 figure
                   img.techlogos(src='assets/cplusplus.png' alt='C++ logo')
                   figcaption C++
-  .parallax-container.valign-wrapper
+  .parallax-container.valign-wrapper.secondsection
     .parallax
       img(src='/assets/img_0461.jpg')
     .container
@@ -73,7 +73,10 @@
               p.desc {{project.desc}}
             .card-action
               button.btmbutton(ng-click='caseStudy($index)') Case Study
-  .section.secondsection
+      .row
+        .col.s12.center
+            button.z-depth-3.btmbutton(ng-click='sendMessage()') View Full Portfolio
+  .section.thirdsection
     .container
       .row.center
         h2.center Blog Posts
@@ -89,8 +92,8 @@
               p Tags: {{post.tags.join(' | ')}}
             .card-action
               a(ng-click='showPost(post)') Read more
-  .parallax-container.valign-wrapper
-    .parallax.fourthsection
+  .parallax-container.valign-wrapper.fourthsection
+    .parallax
       img(src='/assets/museumofflight.jpg')
     .container
       .row
@@ -108,3 +111,4 @@
         .col.s8.offset-s2
           .card-panel.hireme.z-depth-3.center
             h4.hireme.flow-text I'll be ready for a full-time gig after June 8.
+            a.waves-effect.waves-light.btn(ui-sref='contact') Send me a message

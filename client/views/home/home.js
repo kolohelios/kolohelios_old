@@ -52,4 +52,8 @@ angular.module('kolohelios')
     $state.go('posts.show', {postsId: post.$id});
   };
 
+  $scope.sendMessage = function(){
+    console.log('clicked');
+  }
+
 }]);

@@ -4,8 +4,8 @@
 @col-splash: RGBA(103, 47, 183, 1); // purple heart
 @col-brcontrast: RGBA(71, 200, 215, 1); // medium turquoise
 @col-section: RGBA(129, 199, 110, 1); // mantis
-@col-altsection: RGBA(234, 247, 254, 1); // solitude
-@col-altcontrast: RGBA(253, 151, 31, 1); // tree poppy
+@col-altsection: RGBA(248, 250, 233, 1); // twilight blue
+@col-altcontrast: RGBA(223, 119, 7, 1); // tahiti gold
 @col-neutcontrast: RGBA(118, 122, 130, 1); // storm gray
 @fon-stylistic: 'Waiting for the Sunrise', cursive;
 @fon-heading: 'Times New Roman', Times, serif;
@@ -35,6 +35,7 @@ h3{
   font-family: @fon-heading;
   color: @col-neutcontrast;
   font-weight: 300;
+  font-size: 2em;
 }
 h4{
   color: @col-altcontrast;
@@ -53,18 +54,19 @@ p{
 button, .btn{
   background-color: @col-splash;
   color: @col-altcontrast;
+  height: 35px;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
-.card .card-content{
-  padding: 0 20px 20px;
-}
+
 figure{
   display: inline-block;
   margin: 15px 10px 5px;
 }
 #bootstrap{
-  width: 50px;
-  height: 50px;
-  padding: 15px;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
 }
 nav{
   background-color: @col-splash;
@@ -83,7 +85,7 @@ nav{
     color: @col-altsection;
     font-weight: 600;
   }
-  ul a {
+  ul a{
     color: @col-altsection;
   }
 }
@@ -123,6 +125,7 @@ nav{
       -webkit-filter: contrast(50%) brightness(50%);
     }
   }
+  // technologies
   .firstsection{
     background-color: @col-altsection;
     h4{
@@ -132,20 +135,40 @@ nav{
       color: @col-altcontrast;
     }
   }
-
+  // projects
   .secondsection{
+
+  }
+  // blog posts
+  .thirdsection{
     background-color: @col-section;
     color: @col-dkcontrast;
   }
-  .thirdsection{
+  // social profile
+  .fourthsection{
 
   }
-  .fourthsection{
-    background-color: @col-splash;
-  }
+  // call-to-action
   .fifthsection{
+    background-color: @col-splash;
+
+    .card .card-content{
+      padding: 0 20px 20px;
+    }
+    .btn{
+      opacity: 0.5;
+      width: 300px;
+      background-color: @col-neutcontrast;
+      color: @col-brcontrast;
+    }
+    h4{
+      color: @col-altcontrast !important;
+    }
+  }
+  .sixthsection{
     background-color: @col-neutcontrast;
   }
+
   .parallax-container {
     min-height: 380px;
     line-height: 0;
@@ -172,6 +195,12 @@ nav{
 
 }
 
+#contactpage{
+  background-color: @col-altsection;
+  .collection-item{
+    background-color: @col-dkcontrast;
+  }
+}
 
 footer{
   background-color: @col-neutcontrast;
