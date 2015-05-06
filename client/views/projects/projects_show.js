@@ -7,7 +7,8 @@ angular.module('kolohelios')
   $scope.projectId = $state.params.project;
 
   $scope.projects = Project.init();
-  $scope.projects.$loaded().then(function(){
+
+  $scope.projects.$loaded().then(function(obj){
     $scope.projects.forEach(function(obj){
       console.log(obj.name);
       if(obj.name === $scope.projectId){
@@ -15,7 +16,7 @@ angular.module('kolohelios')
       }
     });
     if($scope.project === undefined){
-      $window.swal({title: 'Project not found.', text: 'The project that was requested was not found.', type: 'error'})
+      $window.swal({title: 'Project not found.', text: 'The project that was requested was not found.', type: 'error'});
       $state.go('projects.list');
     }
   });

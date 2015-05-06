@@ -3,7 +3,6 @@
 
 angular.module('kolohelios')
 .controller('PostsNewCtrl', ['$scope', 'Post', function($scope, Post){
-  console.log('PostsNewCtrl');
 
   $scope.posts = Post.init();
 
