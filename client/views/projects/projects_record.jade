@@ -13,7 +13,7 @@
       input(type='text' name='desc' ng-model='project.desc')
     p.input-field
       label(for='extddesc' ng-class='{"active": projectId}') Extended Desc
-      textarea(name='extddesc' ng-model='project.extddesc')
+      textarea.textarea(name='extddesc' ng-model='project.extddesc')
     p.input-field
       label(for='screenshotthumb' ng-class='{"active": projectId}') Screenshot Thumbnail
       input(type='text', name='screenshotthumb', ng-model='project.screenshotThumb')
@@ -22,8 +22,9 @@
       label(for='topthree' ng-class='{"active": projectId}') Top Three?
       input.chbox(type='checkbox' name='topthree' ng-model='project.topThree')
     p(ng-show='project.techs.length > 0') Techs
-      ul
-        li(ng-repeat='tech in project.techs' ng-class='{"active": projectId}') {{tech}}
+      p
+        span(ng-repeat='tech in project.techs' ng-class='{"active": projectId}') {{tech}} | 
+        br
         label(for='addtech') Add Tech
         input(type='text' name='addtech' ng-model='newTech')
       button.waves-effect.waves-light.btn-large(ng-click='addTech(newTech)') Add Tech
