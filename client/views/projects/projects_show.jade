@@ -1,14 +1,15 @@
 .row
-  .col.s6.center
+  .col.s12.center
     h3 {{project.name}}
     h4 Case Study
-  .col.s6.center
+.row
+  .col.s12.m6.center
     img.responsive-img(ng-src='{{project.screenshot}}')
-    p {{project.extddesc}}
+  .col.s12.m6
+    p.flow-text {{project.extddesc}}
+  .col.s12.m6
     p Technologies:
     ul
       li(ng-repeat='tech in project.techs') {{tech}}
     p Role: {{project.role}}
     a(ng-href='{{project.linktoapp}}') {{project.linktext}}
-  .col-xs-6.center
-    

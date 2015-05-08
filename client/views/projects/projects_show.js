@@ -8,7 +8,7 @@ angular.module('kolohelios')
 
   $scope.projects = Project.init();
 
-  $scope.projects.$loaded().then(function(obj){
+  $scope.projects.$loaded().then(function(){
     $scope.projects.forEach(function(obj){
       console.log(obj.name);
       if(obj.name === $scope.projectId){
