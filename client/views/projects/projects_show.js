@@ -21,6 +21,10 @@ angular.module('kolohelios')
     }
   });
 
+  $scope.changeImage = function(direction){
+    
+  };
+
 
 
 }]);

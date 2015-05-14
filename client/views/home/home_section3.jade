@@ -1,0 +1,16 @@
+.section.thirdsection
+  .container
+    .row.center
+      h2 Blog Posts
+    .row
+      .col.s12.m4#posts(ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index < 3')
+        .card.z-depth-3
+          .card-image
+            img(ng-src='{{post.thumbnailimage}}')
+          .card-content
+            h6.flow-text.card-title.black-text {{post.title}}
+            p Date: {{post.postDate | date: 'dd MMM yyyy'}}
+            p.truncate {{post.blurb}}
+            p Tags: {{post.tags.join(' | ')}}
+          .card-action
+            a.btmbutton(ng-click='showPost(post)') Read more

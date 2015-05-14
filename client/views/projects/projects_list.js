@@ -6,4 +6,8 @@ angular.module('kolohelios')
 
   $scope.projects = Portfolio.init();
 
+  $scope.projectDelete = function(project){
+    Portfolio.delete(project);
+  };
+
 }]);

@@ -16,7 +16,6 @@
 html{
   -webkit-font-smoothing: antialiased;
 }
-
 li{
   font-family: @fon-accent;
 }
@@ -47,18 +46,20 @@ h4{
 h5{
   font-family: @fon-accent;
 }
+h6{
+  color: @col-dkcontrast;
+}
 p{
   line-height: 2rem;
   font-family: @fon-text;
 }
-button, .btn{
+.btn{
   background-color: @col-splash;
   color: @col-altcontrast;
-  height: 35px;
-  padding: 5px 10px;
-  border-radius: 5px;
 }
-
+.btn:hover{
+  background-color: @col-neutcontrast;
+}
 figure{
   display: inline-block;
   margin: 15px 10px 5px;
@@ -104,19 +105,30 @@ nav{
 .techs{
   border: 2px @col-neutcontrast solid;
 }
-
+.card-title{
+  color: @col-dkcontrast;
+  font-family: @fon-accent;
+}
+// .projectcard{
+//   .card-action{
+//     position: absolute;
+//     bottom: 0;
+//     text-align: center;
+//   }
+//   .card .card-content{
+//     padding: 0 20px 20px;
+//   }
+// }
 .hireme{
   background-color: @col-dkcontrast;
   color: @col-brcontrast !important;
 }
 #homepage{
-
   .techlogos{
     width: 80px;
     height: 80px;
     margin-bottom: 5px;
   }
-
   .hero{
     #heroheadline{
       top: 25px;
@@ -139,7 +151,6 @@ nav{
   }
   // projects
   .secondsection{
-
   }
   // blog posts
   .thirdsection{
@@ -148,18 +159,16 @@ nav{
   }
   // social profile
   .fourthsection{
-
+    h2{
+      color: @col-brcontrast;
+    }
   }
   // call-to-action
   .fifthsection{
     background-color: @col-splash;
-
-    .card .card-content{
-      padding: 0 20px 20px;
-    }
     .btn{
       opacity: 0.5;
-      width: 300px;
+      width: auto;
       background-color: @col-neutcontrast;
       color: @col-brcontrast;
     }
@@ -170,7 +179,6 @@ nav{
   .sixthsection{
     background-color: @col-neutcontrast;
   }
-
   .parallax-container {
     min-height: 380px;
     line-height: 0;
@@ -179,7 +187,6 @@ nav{
     .parallax-container .section {
       width: 100%;
     }
-
   @media only screen and (max-width : 992px) {
     .parallax-container .section {
       position: absolute;
@@ -194,23 +201,16 @@ nav{
       top: 0;
     }
   }
-
 }
-
 #contactpage{
   background-color: @col-altsection;
   .collection-item{
     background-color: @col-dkcontrast;
   }
 }
-
 footer{
   background-color: @col-neutcontrast;
   .page-footer {
     margin: 0;
   }
-}
-
-.borderfix{
-  overflow: visible;
 }

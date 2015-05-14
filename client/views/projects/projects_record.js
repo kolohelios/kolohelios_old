@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('ProjectsRecordCtrl', ['$scope', 'Project', '$state', function($scope, Project, $state){
+.controller('ProjectsRecordCtrl', ['$scope', 'Project', '$state', 'Portfolio', function($scope, Project, $state, Portfolio){
 
   $scope.projectId = $state.params.project;
 
@@ -18,10 +18,10 @@ angular.module('kolohelios')
       });
     });
   }else{
+    Portfolio.init();
     $scope.project = {};
     $scope.project.techs = [];
   }
-
 
   $scope.addTech = function(newTech){
     $scope.project.techs.push(newTech);
@@ -29,7 +29,7 @@ angular.module('kolohelios')
   };
 
   $scope.addProject = function(project){
-    Project.add(project);
+    Portfolio.add(project);
     $scope.project = {};
   };
 

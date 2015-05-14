@@ -24,6 +24,10 @@ angular.module('kolohelios')
     return afPortfolio.$save(project);
   };
 
+  Portfolio.delete = function(project){
+    return afPortfolio.$remove(project);
+  };
+
   return Portfolio;
 
 }]);

@@ -1,0 +1,19 @@
+.parallax-container.secondsection
+  .parallax
+    img(src='/assets/img_0461.jpg')
+  .container
+    .row.center
+        h2 Projects
+    .row
+      .col.s12.m4#projectlist(ng-repeat='project in projects | limitTo : 3 | orderBy : -displayOrder')
+        .card.z-depth-3
+          .card-image
+            img.responsive-img(ng-src='{{project.screenshot}}')
+          .card-content
+            h6.card-title.flow-text.black-text {{project.name}}
+            p.desc {{project.desc}}
+          .card-action
+            a.btmbutton(ui-sref='projects.show({project: project.name})') Case Study
+    .row
+      .col.s12.center
+          button.z-depth-3.btmbutton(ui-sref='projects.list') View Full Portfolio

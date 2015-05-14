@@ -4,7 +4,7 @@
       .col.s12
         h2 Projects
     .row
-      .col.s12.m4.center(ng-repeat='project in projects track by $index')
+      .col.s12.m4.center(ng-repeat='project in projects | orderBy : -displayOrder')
         .card.z-depth-3
           .card-image
             img.responsive-img(ng-src='{{project.screenshotThumb}}')
@@ -13,4 +13,6 @@
             p.desc {{project.desc}}
           .card-action.center
             a.waves-effect.waves-light.btn(ui-sref='projects.show({project: project.name})') Case Study
-            a.waves-effect.waves-light.btn(ui-sref='projects.edit({project: project.name})') Edit Project
+            a.waves-effect.waves-light.btn(ui-sref='projects.edit({project: project.name})' ng-show='activeUser') Edit Project
+            a.waves-effect.waves-light.btn(ng-click='projectDelete(project)' ng-show='activeUser') Delete Project
+            

@@ -19,7 +19,6 @@ angular.module('kolohelios')
   };
 
   Project.find = function(projectName){
-
     afProject.forEach(function(obj){
       console.log(obj.name);
       if(obj.name === projectName){

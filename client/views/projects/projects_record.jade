@@ -21,6 +21,9 @@
     p.input-field
       label(for='topthree' ng-class='{"active": projectId}') Top Three?
       input.chbox(type='checkbox' name='topthree' ng-model='project.topThree')
+    p.input-field
+      label(for='displayorder' ng-class='{"active": projectId}') Display Order
+      input.chbox(type='input' name='displayorder' ng-model='project.displayOrder')
     p(ng-show='project.techs.length > 0') Techs
       p
         span(ng-repeat='tech in project.techs' ng-class='{"active": projectId}') {{tech}} | 
@@ -41,6 +44,9 @@
     p.input-field
       label(for='linktoapp' ng-class='{"active": projectId}') Link to App
       input(type='url' name='linktoapp' ng-model='project.linkToApp')
+    p.input-field
+      label(for='linktorepo' ng-class='{"active": projectId}') Link to Repo
+      input(type='url' name='linktorepo' ng-model='project.linkToRepo')
 .row
   .col-xs-12.center
     button.waves-effect.waves-light.btn-large(ng-hide='projectId' ng-click='addProject(project)' width='100%') Add Project

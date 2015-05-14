@@ -4,7 +4,12 @@
     h4 Case Study
 .row
   .col.s12.m6.center
-    img.responsive-img(ng-src='{{project.screenshot}}')
+    div
+      img.responsive-img(ng-src='{{project.screenshot}}')
+      a.waves-effect.waves-light.btn(ng-click='changeImage(last)')
+        i.mdi-navigation-arrow-back.large
+      a.waves-effect.waves-light.btn(ng-click='changeImage(next)')
+        i.mdi-navigation-arrow-forward.large
   .col.s12.m6
     p.flow-text {{project.extddesc}}
   .col.s12.m6
@@ -12,4 +17,5 @@
     ul
       li(ng-repeat='tech in project.techs') {{tech}}
     p Role: {{project.role}}
-    a(ng-href='{{project.linktoapp}}') {{project.linktext}}
+    a(ng-href='{{project.linkToApp}}') {{project.linktext}}
+    a(ng-href='{{project.linkToRepo}}')
