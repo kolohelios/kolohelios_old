@@ -1,8 +1,10 @@
-.row
+.row(ng-if='!activeUser')
+  h3 You must be logged in to see this page.
+.row(ng-if='activeUser')
   .col.s12.center
     h3.heading(ng-hide='projectId') Create Project
     h3.heading(ng-show='projectId') Edit Project
-.row
+.row(ng-if='activeUser')
   form(name='recordProject')
   .col.s4
     p.input-field
@@ -47,7 +49,7 @@
     p.input-field
       label(for='linktorepo' ng-class='{"active": projectId}') Link to Repo
       input(type='url' name='linktorepo' ng-model='project.linkToRepo')
-.row
+.row(ng-if='activeUser')
   .col-xs-12.center
     button.waves-effect.waves-light.btn-large(ng-hide='projectId' ng-click='addProject(project)' width='100%') Add Project
       i.mdi-content-send.right

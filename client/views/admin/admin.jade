@@ -2,7 +2,7 @@
   .col.s12.center
     h3.heading Admin
 .container
-  .row(ng-hide='activeUser')
+  .row(ng-if='!activeUser')
     .col.s12.center
       form(name='newPost')
         .form-group
@@ -13,7 +13,7 @@
           input.form-control(type='password', name='password', ng-model='user.password')
         .form-group
           button.form-control.btn.btn-primary(ng-click='loginUser(user)') Login
-  .row(ng-show='activeUser')
+  .row(ng-if='activeUser')
     .col.s12.center
       p: a(ng-click='logout()') Logout
       p: a(ui-sref='posts.new') New Blog Post

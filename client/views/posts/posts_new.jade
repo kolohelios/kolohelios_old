@@ -1,4 +1,6 @@
-.row
+.row(ng-if='!activeUser')
+  h3 You must be logged in to see this page.
+.row(ng-if='activeUser')
   .col.s12
     h3.center New Post
     hr
@@ -35,13 +37,13 @@
       label(for='addimage') Add Image
       input.form-control(type='text', name='addimage', ng-model='newImage')
       button.form-control.btn.btn-primary(ng-click='addImage(newImage)') Add Image
-.row
+.row(ng-if='activeUser')
   .col.s12
     .form-group
       label(for='bodytext') Body
       textarea.form-control(rows='10', name='bodytext', ng-model='post.bodyText')
       button.btn.btn-info(ng-click='addPost(post)') Save Post
-.row
+.row(ng-if='activeUser')
   .col.s12
     hr
     h4.grey-text.center Post Preview
