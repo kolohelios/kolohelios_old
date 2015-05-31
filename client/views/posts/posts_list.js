@@ -6,7 +6,7 @@ angular.module('kolohelios')
   $scope.posts = Post.init();
 
   $scope.showPost = function(post){
-    $state.go('posts.show', {postsId: post.$id});
+    $state.go('posts.show', {post: post.$id});
   };
 
 }]);

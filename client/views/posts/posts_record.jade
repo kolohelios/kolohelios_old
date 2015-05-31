@@ -2,8 +2,8 @@
   h3 You must be logged in to see this page.
 .row(ng-if='activeUser')
   .col.s12
-    h3.center New Post
-    hr
+    h3.heading(ng-hide='postId') Create Post
+    h3.heading(ng-show='postId') Edit Post
   .col.s4
     form(name='newPost', novalidation)
     .form-group
@@ -42,7 +42,10 @@
     .form-group
       label(for='bodytext') Body
       textarea.form-control(rows='10', name='bodytext', ng-model='post.bodyText')
-      button.btn.btn-info(ng-click='addPost(post)') Save Post
+      button.waves-effect.waves-light.btn-large(ng-hide='postId' ng-click='addPost(post)' width='100%') Add Project
+        i.mdi-content-send.right
+      button.waves-effect.waves-light.btn-large(ng-show='postId' ng-click='savePost(post)' width='100%') Save Project
+        i.mdi-content-send.right
 .row(ng-if='activeUser')
   .col.s12
     hr

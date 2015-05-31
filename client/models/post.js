@@ -13,9 +13,9 @@ angular.module('kolohelios')
     return afPosts;
   }
 
-  function save(post){
+  function create(post){
     return afPosts.$add(post);
   }
 
-  return {init: init, save: save};
+  return {init: init, create: create};
 }]);

@@ -9,7 +9,7 @@ angular.module('kolohelios')
   $scope.posts = Post.init();
 
   if($stateParams){
-    $scope.postId = $stateParams.postsId;
+    $scope.postId = $stateParams.post;
     $scope.posts.$loaded().then(function(){
       $scope.post = $scope.posts.$getRecord($scope.postId);
     });
