@@ -10,10 +10,10 @@ angular.module('kolohelios')
     $scope.posts = Post.init();
     $scope.posts.$loaded().then(function(){
       $scope.posts.forEach(function(obj){
-        console.log(obj.name);
         if(obj.$id === $scope.postId){
+          obj.postDate = new Date(obj.postDate);
           $scope.post = obj;
-          $scope.project.tags = $scope.project.tags ? $scope.project.tags : [];
+          $scope.post.tags = $scope.post.tags ? $scope.post.tags : [];
         }
       });
     });
@@ -38,6 +38,15 @@ angular.module('kolohelios')
     $scope.post.postDate = $scope.post.postDate.getTime();
     Post.create(post);
     $scope.post = {};
+  };
+
+  $scope.savePost = function(post){
+    $scope.post.postDate = $scope.post.postDate.getTime();
+    Post.save(post)
+    .then(function(){
+      $scope.post = {};
+      $scope.postId = null;
+    });
   };
 
 }]);

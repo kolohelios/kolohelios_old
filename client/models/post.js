@@ -17,5 +17,13 @@ angular.module('kolohelios')
     return afPosts.$add(post);
   }
 
-  return {init: init, create: create};
+  function save(post){
+    return afPosts.$save(post);
+  }
+  
+  function remove(post){
+    return afPosts.$remove(post);
+  }
+
+  return {init: init, create: create, save: save, remove: remove};
 }]);
