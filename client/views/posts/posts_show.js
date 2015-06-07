@@ -23,6 +23,6 @@ angular.module('kolohelios')
         $state.go('posts.list');
       });
     }
-  }
+  };
 
 }]);

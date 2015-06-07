@@ -32,7 +32,7 @@ h2{
 }
 h3{
   font-family: @fon-heading;
-  color: @col-neutcontrast;
+  color: @col-altcontrast;
   font-weight: 300;
   font-size: 1.8em;
 }
@@ -65,9 +65,9 @@ figure{
   margin: 15px 10px 5px;
 }
 #bootstrap{
-  width: 60px;
-  height: 60px;
-  padding: 10px;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
 }
 nav{
   background-color: @col-splash;
@@ -88,6 +88,9 @@ nav{
   }
   ul a{
     color: @col-altsection;
+  }
+  .nav-wrapper{
+    margin: 0 20px;
   }
 }
 .primarysection{
@@ -141,7 +144,10 @@ nav{
   }
   // technologies
   .firstsection{
-    background-color: @col-altsection;
+    background-color: @col-neutcontrast;
+    h3{
+      color: @col-brcontrast;
+    }
     h4{
       color: @col-neutcontrast;
     }
@@ -172,16 +178,14 @@ nav{
   }
   // call-to-action
   .fifthsection{
-    background-color: @col-splash;
-    .btn{
-      opacity: 0.5;
-      width: auto;
-      background-color: @col-neutcontrast;
-      color: @col-brcontrast;
+    background-color: @col-neutcontrast;
+    .btn-large{
+      color: @col-altcontrast;
+      width: 300px;
+      height: 100px;
+      }
     }
-    h4{
-      color: @col-altcontrast !important;
-    }
+
   }
   .sixthsection{
     background-color: @col-neutcontrast;
@@ -208,7 +212,7 @@ nav{
       top: 0;
     }
   }
-}
+
 #contactpage{
   background-color: @col-altsection;
   .collection-item{
