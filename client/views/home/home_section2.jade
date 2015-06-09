@@ -8,7 +8,7 @@
       .col.s12.m4#projectlist(ng-repeat='project in projects | limitTo : 3 | orderBy : -displayOrder')
         .card.z-depth-3
           .card-image
-            img.responsive-img(ng-src='{{project.screenshot}}')
+            img.responsive-img(ng-src='{{project.screenshotThumb}}')
           .card-content
             h6.card-title.flow-text.black-text {{project.name}}
             p.desc {{project.desc}}
