@@ -1,21 +1,25 @@
-.row
-  .col.s12.center
-    h3 {{project.name}}
-    h4 Case Study
-.row
-  .col.s12.m6.center
-    div
-      img.responsive-img(ng-src='{{project.screenshot}}')
-      a.waves-effect.waves-light.btn(ng-click='changeImage(last)')
-        i.mdi-navigation-arrow-back.large
-      a.waves-effect.waves-light.btn(ng-click='changeImage(next)')
-        i.mdi-navigation-arrow-forward.large
-  .col.s12.m6
-    p.flow-text {{project.extddesc}}
-  .col.s12.m6
-    p Technologies:
-    ul
-      li(ng-repeat='tech in project.techs') {{tech}}
-    p Role: {{project.role}}
-    a(ng-href='{{project.linkToApp}}') {{project.linktext}}
-    a(ng-href='{{project.linkToRepo}}')
+.section
+  .row
+    .col.s12.center
+      h2 {{project.name}}
+  .row
+    .col.s12.m6.center
+      h5 {{project.desc}}
+      div
+        a.waves-effect.waves-light.btn(ng-click='changeImage("last")')
+          i.mdi-navigation-arrow-back.large
+        a.waves-effect.waves-light.btn(ng-click='changeImage("next")')
+          i.mdi-navigation-arrow-forward.large
+        figure
+          figcaption: h5 {{project.images[imageIndex][1]}}
+          img.responsive-img(ng-src='{{project.images[imageIndex][0]}}')
+
+    .col.s12.m6
+      p.flow-text {{project.extddesc}}
+    .col.s12.m6
+      p Technologies:
+      ul
+        li(ng-repeat='tech in project.techs') {{tech}}
+      p Role: {{project.role}}
+      p: a(ng-href='{{project.linkToApp}}') {{project.linkText}}
+      p: a(ng-href='{{project.linkToRepo}}') Link to Github repository

@@ -7,6 +7,7 @@ angular.module('kolohelios')
   $scope.projectId = $state.params.project;
 
   $scope.projects = Project.init();
+  $scope.imageIndex = 0;
 
   $scope.projects.$loaded().then(function(){
     $scope.projects.forEach(function(obj){
@@ -22,7 +23,19 @@ angular.module('kolohelios')
   });
 
   $scope.changeImage = function(direction){
-    
+    if(direction === 'last'){
+      if($scope.imageIndex !== 0){
+        $scope.imageIndex--;
+      }else{
+        $scope.imageIndex = $scope.project.images.length - 1;
+      }
+    }else{
+      if($scope.imageIndex !== $scope.project.images.length - 1){
+        $scope.imageIndex++;
+      }else{
+        $scope.imageIndex = 0;
+      }
+    }
   };
 
 
