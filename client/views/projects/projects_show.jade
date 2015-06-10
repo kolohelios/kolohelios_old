@@ -1,22 +1,36 @@
 .section
   .row
     .col.s12.center
-      h2 {{project.name}}
-      h4 {{project.desc}}
+      .row.valign-wrapper
+        .col.s3.center
+          a.waves-effect.waves-light.btn.valign.z-depth-3(ng-click='changeProject("last")')
+            i.mdi-navigation-arrow-back.large
+            span.white-text PREVIOUS
+        .col.s6.center
+          h2.valign {{project.name}}
+        .col.s3.center
+          a.waves-effect.waves-light.btn.valign.z-depth-3(ng-click='changeProject("next")')
+            span.white-text NEXT &nbsp;
+            i.mdi-navigation-arrow-forward.large
+      .row
+        h4.flow-text {{project.desc}}
   .row
     .col.s12.m6.center
       div
-        a.waves-effect.waves-light.btn(ng-click='changeImage("last")' ng-show='project.images.length > 1')
-          i.mdi-navigation-arrow-back.large
-        a.waves-effect.waves-light.btn(ng-click='changeImage("next")' ng-show='project.images.length > 1')
-          i.mdi-navigation-arrow-forward.large
-        figure
-          figcaption: h5 {{project.images[imageIndex][1]}}
-          img.responsive-img(ng-src='{{project.images[imageIndex][0]}}')
-        a.waves-effect.waves-light.btn(ng-click='changeImage("last")' ng-show='project.images.length > 1')
-          i.mdi-navigation-arrow-back.large
-        a.waves-effect.waves-light.btn(ng-click='changeImage("next")' ng-show='project.images.length > 1')
-          i.mdi-navigation-arrow-forward.large
+        .row
+          a.waves-effect.waves-light.btn.z-depth-3(ng-click='changeImage("last")' ng-show='project.images.length > 1')
+            i.mdi-navigation-arrow-back.large
+          a.waves-effect.waves-light.btn.z-depth-3(ng-click='changeImage("next")' ng-show='project.images.length > 1')
+            i.mdi-navigation-arrow-forward.large
+        .row.projectimage
+          figure
+            figcaption: h5 {{project.images[imageIndex][1]}}
+            img.responsive-img.z-depth-3(ng-src='{{project.images[imageIndex][0]}}')
+        .row
+          a.waves-effect.waves-light.btn.z-depth-3(ng-click='changeImage("last")' ng-show='project.images.length > 1')
+            i.mdi-navigation-arrow-back.large
+          a.waves-effect.waves-light.btn.z-depth-3(ng-click='changeImage("next")' ng-show='project.images.length > 1')
+            i.mdi-navigation-arrow-forward.large
 
     .col.s12.m6
       p.flow-text {{project.extddesc}}

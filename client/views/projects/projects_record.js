@@ -10,7 +10,6 @@ angular.module('kolohelios')
     $scope.projects = Project.init();
     $scope.projects.$loaded().then(function(){
       $scope.projects.forEach(function(obj){
-        console.log(obj.name);
         if(obj.name === $scope.projectId){
           $scope.project = obj;
           $scope.project.techs = $scope.project.techs ? $scope.project.techs : [];
@@ -27,6 +26,20 @@ angular.module('kolohelios')
     $scope.project.techs.push(newTech);
     $scope.newTech = '';
   };
+
+  $scope.addImage = function(link, caption){
+    var imageArray = [];
+    console.log($scope.imageLink);
+    imageArray.push(link);
+    imageArray.push(caption);
+    $scope.project.images.push(imageArray);
+    $scope.imageLink = '';
+    $scope.imageCaption = '';
+  }
+
+  $scope.removeImage = function(imageIndex){
+    $scope.project.images.splice(imageIndex, 1);
+  }
 
   $scope.addProject = function(project){
     Portfolio.add(project);

@@ -9,17 +9,26 @@ angular.module('kolohelios')
   $scope.projects = Project.init();
   $scope.imageIndex = 0;
 
-  $scope.projects.$loaded().then(function(){
-    $scope.projects.forEach(function(obj){
-      console.log(obj.name);
-      if(obj.name === $scope.projectId){
-        $scope.project = obj;
+  function findRecord(recordSet, name){
+    for(var i = 0; i < recordSet.length; i++){
+      if(recordSet[i].name === name){
+        $scope.project = recordSet[i];
+        $scope.last = i > 0 ? recordSet[i - 1].name : recordSet[recordSet.length - 1].name;
+        $scope.next = i < recordSet.length - 1 ? recordSet[i + 1].name : recordSet[0].name;
       }
-    });
+    }
     if($scope.project === undefined){
       $window.swal({title: 'Project not found.', text: 'The project that was requested was not found.', type: 'error'});
       $state.go('projects.list');
     }
+  }
+
+  $scope.projects.$loaded().then(function(){
+    $scope.projectArray = [];
+    $scope.projects.forEach(function(record){
+      $scope.projectArray.push(record);
+    });
+    findRecord($scope.projectArray, $scope.projectId);
   });
 
   $scope.changeImage = function(direction){
@@ -37,6 +46,14 @@ angular.module('kolohelios')
       }
     }
   };
+
+  $scope.changeProject = function(direction){
+    if(direction === 'last'){
+      findRecord($scope.projectArray, $scope.last);
+    }else{
+      findRecord($scope.projectArray, $scope.next);
+    }
+  }
 
 
 

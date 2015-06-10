@@ -90,7 +90,7 @@ nav{
     color: @col-altsection;
   }
   .nav-wrapper{
-    margin: 0 40px;
+    margin: 0 25px;
   }
 }
 .primarysection{
@@ -103,7 +103,7 @@ nav{
 .chbox{
   position: relative !important;
   left: 0 !important;
-  margin: -5px;
+  top: 0;
 }
 .techs{
   border: 2px @col-neutcontrast solid;
@@ -243,4 +243,12 @@ footer{
 // fix the offset button issue
 .card .card-action a {
   margin-right: 0;
+}
+// fix materialize checkbox issue
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: relative;
+  left: 0;
+}
+.projectimage{
+  height: 400px;
 }

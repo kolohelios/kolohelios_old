@@ -21,12 +21,13 @@
       input(type='text', name='screenshotthumb', ng-model='project.screenshotThumb')
     img.responsive-img(ng-src='{{project.screenshotThumb}}')
   .col.s4
-    p.input-field
-      label(for='isdraft' ng-class='{"active": projectId}') Is draft?
-      input.chbox(type='checkbox' name='isdraft' ng-model='project.isDraft')
+    p
+      label(for='isdraft') Is draft?
+      input(type='checkbox' name='isdraft' ng-model='project.isDraft')
+    br
     p.input-field
       label(for='displayorder' ng-class='{"active": projectId}') Display Order
-      input.chbox(type='input' name='displayorder' ng-model='project.displayOrder')
+      input(type='input' name='displayorder' ng-model='project.displayOrder')
     p(ng-show='project.techs.length > 0') Techs
       p
         span(ng-class='{"active": projectId}') {{project.techs.join(' | ')}} 
@@ -35,12 +36,16 @@
         input(type='text' name='addtech' ng-model='newTech')
       button.waves-effect.waves-light.btn-large(ng-click='addTech(newTech)') Add Tech
     .row(ng-repeat='image in project.images')
+      button.waves-effect.waves-light.btn-small.red(ng-click='removeImage(image.$index)') X
       img.responsive-img(ng-src='{{image[0]}}')
       p {{image[1]}}
     p.input-field
-      label(for='addimage') Add Image
-      input(type='text' name='addimage' ng-model='newTech')
-      button.waves-effect.waves-light.btn-large(ng-click='addTech(newTech)') Add Image
+      label(for='addimagelink' ng-class='{"active": projectId}') Add Image Link
+      input(type='text' name='addimagelink' ng-model='imageLink')
+    p.input-field
+      label(for='addimagecaption' ng-class='{"active": projectId}') Add Image Caption
+      input(type='text' name='addimagecaption' ng-model='imageCaption')
+      button.waves-effect.waves-light.btn-large(ng-click='addImage(imageLink, imageCaption)') Add Image to Array
   .col.s4
     p.input-field
       label(for='role' ng-class='{"active": projectId}') Role
