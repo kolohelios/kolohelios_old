@@ -4,7 +4,7 @@
       .col.s12
         h2 Projects
     .row
-      .col.s12.m4.center(ng-repeat='project in projects | orderBy : -displayOrder')
+      .col.s12.m4.center(ng-repeat='project in projects | orderBy : -displayOrder'  ng-if='project.isDraft === false || activeUser')
         .card.z-depth-3
           .card-image
             img.responsive-img(ng-src='{{project.screenshotThumb}}')

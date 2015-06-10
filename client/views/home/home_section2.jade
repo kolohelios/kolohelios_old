@@ -5,7 +5,7 @@
     .row.center
         h2 Projects
     .row
-      .col.s12.m4#projectlist(ng-repeat='project in projects | limitTo : 3 | orderBy : -displayOrder')
+      .col.s12.m4#projectlist(ng-repeat='project in projects | orderBy : -displayOrder' ng-if='project.displayOrder < 4 && project.isDraft === false')
         .card.z-depth-3
           .card-image
             img.responsive-img(ng-src='{{project.screenshotThumb}}')
