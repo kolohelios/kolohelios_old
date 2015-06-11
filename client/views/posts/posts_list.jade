@@ -10,6 +10,8 @@
           p Date: {{post.postDate | date: 'dd MMM yyyy'}}
           p {{post.blurb}}
           p Tags: {{post.tags.join(' | ')}}
+          a.waves-effect.waves-light.btn(ui-sref='posts.edit({post: post.$id})' ng-show='activeUser') Edit Project
+          a.waves-effect.waves-light.btn(ng-click='postDelete(post.$id)' ng-show='activeUser') Delete Project
   .row
     .col.s12#postslist
       .section

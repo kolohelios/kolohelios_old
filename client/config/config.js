@@ -12,7 +12,7 @@ angular.module('kolohelios')
 
   .state('posts', {url: '/posts', templateUrl: '/views/posts/posts.html', abstract: true})
   .state('posts.list', {url: '', templateUrl: '/views/posts/posts_list.html', controller: 'PostsListCtrl'})
-  .state('posts.new', {url: '/new', templateUrl: '/views/posts/posts_new.html', controller: 'PostsRecordCtrl'})
+  .state('posts.new', {url: '/new', templateUrl: '/views/posts/posts_record.html', controller: 'PostsRecordCtrl'})
   .state('posts.show', {url: '/{post}', templateUrl: '/views/posts/posts_show.html', controller: 'PostsShowCtrl'})
   .state('posts.edit', {url: '/{post}/edit', templateUrl: '/views/posts/posts_record.html', controller: 'PostsRecordCtrl'})
 

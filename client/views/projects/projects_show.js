@@ -17,6 +17,7 @@ angular.module('kolohelios')
         $scope.next = i < recordSet.length - 1 ? recordSet[i + 1].name : recordSet[0].name;
       }
     }
+    angular.element('.materialboxed').materialbox();
     if($scope.project === undefined){
       $window.swal({title: 'Project not found.', text: 'The project that was requested was not found.', type: 'error'});
       $state.go('projects.list');
