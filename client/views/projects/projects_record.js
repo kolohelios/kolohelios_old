@@ -20,6 +20,7 @@ angular.module('kolohelios')
     Portfolio.init();
     $scope.project = {};
     $scope.project.techs = [];
+    $scope.project.images = [];
   }
 
   $scope.addTech = function(newTech){

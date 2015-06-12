@@ -24,10 +24,9 @@
     p
       label(for='isdraft') Is draft?
       input(type='checkbox' name='isdraft' ng-model='project.isDraft')
-    br
-    p.input-field
+    p.input-label
       label(for='displayorder' ng-class='{"active": projectId}') Display Order
-      input(type='input' name='displayorder' ng-model='project.displayOrder')
+      input(type='text' name='displayorder' ng-model='project.displayOrder')
     p(ng-show='project.techs.length > 0') Techs
       p
         span(ng-class='{"active": projectId}') {{project.techs.join(' | ')}} 
@@ -36,7 +35,7 @@
         input(type='text' name='addtech' ng-model='newTech')
       button.waves-effect.waves-light.btn-large(ng-click='addTech(newTech)') Add Tech
     .row(ng-repeat='image in project.images')
-      button.waves-effect.waves-light.btn-small.red(ng-click='removeImage(image.$index)') X
+      button.waves-effect.waves-light.btn-small.red(ng-click='removeImage(image.$index)'): i.fa.fa-trash
       img.responsive-img(ng-src='{{image[0]}}')
       p {{image[1]}}
     p.input-field
