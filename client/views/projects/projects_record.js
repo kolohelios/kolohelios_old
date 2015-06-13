@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('kolohelios')
-.controller('ProjectsRecordCtrl', ['$scope', 'Project', '$state', 'Portfolio', function($scope, Project, $state, Portfolio){
+.controller('ProjectsRecordCtrl', ['$scope', 'Project', '$state', 'Portfolio', function($scope, Project, $state, Portfolio, $window){
 
   $scope.projectId = $state.params.project;
 
@@ -39,8 +39,11 @@ angular.module('kolohelios')
   }
 
   $scope.removeImage = function(imageIndex){
-    $scope.project.images.splice(imageIndex, 1);
-  }
+    var confirmDelete = $window.confirm('Are you sure you want to delete this image?');
+    if(confirmDelete === true){
+      $scope.project.images.splice(imageIndex, 1);
+    }
+  };
 
   $scope.addProject = function(project){
     Portfolio.add(project);

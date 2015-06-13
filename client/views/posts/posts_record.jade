@@ -42,9 +42,9 @@
     .form-group
       label(for='bodytext') Body
       textarea.form-control(rows='10', name='bodytext', ng-model='post.bodyText')
-      button.waves-effect.waves-light.btn-large(ng-hide='postId' ng-click='addPost(post)' width='100%') Add Project
+      button.waves-effect.waves-light.btn-large(ng-hide='postId' ng-click='addPost(post)') Add Post
         i.mdi-content-send.right
-      button.waves-effect.waves-light.btn-large(ng-show='postId' ng-click='savePost(post)' width='100%') Save Project
+      button.waves-effect.waves-light.btn-large(ng-show='postId' ng-click='savePost(post)') Save Post
         i.mdi-content-send.right
 .row(ng-if='activeUser')
   .col.s12
