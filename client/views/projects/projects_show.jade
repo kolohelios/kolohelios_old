@@ -56,7 +56,7 @@
     .col.s12.m6
       p Technologies:
       ul
-        li(ng-repeat='tech in project.techs') {{tech}}
+        li(ng-repeat='tech in project.techs | orderBy: tech') {{tech}}
       p Role: {{project.role}}
       p: a(ng-href='{{project.linkToApp}}') {{project.linkText}}
       p: a(ng-href='{{project.linkToRepo}}') Link to Github repository

@@ -5,14 +5,14 @@
         h2 Projects
     .row
       .col.s12.m4.center(ng-repeat='project in projects | orderBy : -displayOrder'  ng-if='project.isDraft === false || activeUser')
-        .card.z-depth-3
+        .card.z-depth-3: a(ui-sref='projects.show({project: project.name})')
           .card-image
             img.responsive-img(ng-src='{{project.screenshotThumb}}')
           .card-content
-            h4.flex-text {{project.name | uppercase}}
+            h4.flex-text {{project.name | capitalize}}
             p.desc {{project.desc}}
           .card-action.center
-            a.waves-effect.waves-light.btn(ui-sref='projects.show({project: project.name})') Case Study
+            p Click Card to View Case Study
             a.waves-effect.waves-light.btn(ui-sref='projects.edit({project: project.name})' ng-show='activeUser') Edit Project
             a.waves-effect.waves-light.btn(ng-click='projectDelete(project)' ng-show='activeUser') Delete Project
             

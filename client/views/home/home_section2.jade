@@ -6,14 +6,14 @@
         h2 Projects
     .row
       .col.s12.m4#projectlist(ng-repeat='project in projects | orderBy : -displayOrder' ng-if='project.displayOrder < 4 && project.isDraft === false')
-        .card.z-depth-3
+        .card.z-depth-3: a(ui-sref='projects.show({project: project.name})')
           .card-image
             img.responsive-img(ng-src='{{project.screenshotThumb}}')
           .card-content
-            h6.card-title.flow-text.black-text {{project.name}}
+            h6.card-title.flow-text.black-text
+              i.fa.fa-info-circle.fa-1x&nbsp;
+              span {{project.name}}
             p.desc {{project.desc}}
-          .card-action
-            a.btmbutton(ui-sref='projects.show({project: project.name})') Case Study
     .row
       .col.s12.center
           a.z-depth-3.waves-effect.waves-light.btn-large(ui-sref='projects.list') View Full Portfolio
