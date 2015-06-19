@@ -26,31 +26,7 @@
       .row
         h4.flow-text {{project.desc}}
   .row
-    .col.m6.hide-on-small-only.center
-      .row
-        .col.s2
-          a.photomedbuttons.waves-effect.waves-light.btn.z-depth-3(ng-click='changeImage("last")' ng-show='project.images.length > 1')
-            i.mdi-navigation-arrow-back.large
-        .col.s8
-          figure
-            figcaption: h5 {{project.images[imageIndex][1]}}
-            img.materialboxed.responsive-img.z-depth-3(ng-src='{{project.images[imageIndex][0]}}')
-        .col.s2
-          a.photomedbuttons.waves-effect.waves-light.btn.z-depth-3(ng-click='changeImage("next")' ng-show='project.images.length > 1')
-            i.mdi-navigation-arrow-forward.large
-    .col.s12.m6.hide-on-med-and-up.center
-      .row
-        .col.s12
-          figure
-            figcaption: h5 {{project.images[imageIndex][1]}}
-            img.projectimage.responsive-img.z-depth-3(ng-src='{{project.images[imageIndex][0]}}')
-      .row
-        a.waves-effect.waves-light.btn.z-depth-3(ng-click='changeImage("last")' ng-show='project.images.length > 1')
-          i.mdi-navigation-arrow-back.large
-        span &nbsp;&nbsp;&nbsp;
-        a.waves-effect.waves-light.btn.z-depth-3(ng-click='changeImage("next")' ng-show='project.images.length > 1')
-          i.mdi-navigation-arrow-forward.large
-      
+    div(je-img-slider imgarray='project.images')
     .col.s12.m6
       p.flow-text {{project.extddesc}}
     .col.s12.m6

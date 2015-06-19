@@ -7,7 +7,6 @@ angular.module('kolohelios')
   $scope.projectId = $state.params.project;
 
   $scope.projects = Project.init();
-  $scope.imageIndex = 0;
 
   function findRecord(recordSet, name){
     for(var i = 0; i < recordSet.length; i++){
@@ -32,29 +31,13 @@ angular.module('kolohelios')
     findRecord($scope.projectArray, $scope.projectId);
   });
 
-  $scope.changeImage = function(direction){
-    if(direction === 'last'){
-      if($scope.imageIndex !== 0){
-        $scope.imageIndex--;
-      }else{
-        $scope.imageIndex = $scope.project.images.length - 1;
-      }
-    }else{
-      if($scope.imageIndex !== $scope.project.images.length - 1){
-        $scope.imageIndex++;
-      }else{
-        $scope.imageIndex = 0;
-      }
-    }
-  };
-
   $scope.changeProject = function(direction){
     if(direction === 'last'){
       findRecord($scope.projectArray, $scope.last);
     }else{
       findRecord($scope.projectArray, $scope.next);
     }
-  }
+  };
 
 
 
