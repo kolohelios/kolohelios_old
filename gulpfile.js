@@ -1,3 +1,5 @@
+/* eslint camelcase: 0 */
+
 'use strict';
 
 var run = require('run-sequence');
@@ -5,13 +7,12 @@ var rev = require('gulp-rev');
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var less = require('gulp-less');
-var lint = require('gulp-jshint');
+var lint = require('gulp-eslint');
 var copy = require('gulp-copy');
 var util = require('gulp-util');
 var size = require('gulp-filesize');
 var watch = require('gulp-watch');
 var bower = require('gulp-bower');
-//var debug = require('gulp-debug');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -128,14 +129,14 @@ gulp.task('jade', function() {
 gulp.task('lint', function() {
   return gulp.src(paths.codesrc)
     .pipe(lint())
-    .pipe(lint.reporter('jshint-stylish'))
+    .pipe(lint.format())
     .on('error', util.log);
 });
 
 gulp.task('lint-self', function() {
   return gulp.src('./gulpfile.js')
     .pipe(lint())
-    .pipe(lint.reporter('jshint-stylish'))
+    .pipe(lint.format())
     .on('error', util.log);
 });
 

@@ -1,9 +1,9 @@
 // /views/projects/projects_show.js
+
 'use strict';
 
 angular.module('kolohelios')
 .controller('ProjectsShowCtrl', ['$scope', 'Project', '$state', '$window', function($scope, Project, $state, $window){
-
   $scope.projectId = $state.params.project;
 
   $scope.projects = Project.init();
@@ -17,7 +17,7 @@ angular.module('kolohelios')
       }
     }
     angular.element('.materialboxed').materialbox();
-    if($scope.project === undefined){
+    if(!$scope.project){
       $window.swal({title: 'Project not found.', text: 'The project that was requested was not found.', type: 'error'});
       $state.go('projects.list');
     }
@@ -38,7 +38,4 @@ angular.module('kolohelios')
       findRecord($scope.projectArray, $scope.next);
     }
   };
-
-
-
 }]);

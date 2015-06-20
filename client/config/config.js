@@ -1,4 +1,7 @@
 // /config/config.js
+
+/* eslint no-reserved-keys: 0 */
+
 'use strict';
 
 angular.module('kolohelios')

@@ -1,3 +1,5 @@
+// /config/filters.js
+
 'use strict';
 
 angular.module('kolohelios')

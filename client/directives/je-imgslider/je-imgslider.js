@@ -1,3 +1,5 @@
+// /directives/je-imgslider/je-imgslider.js
+
 'use strict';
 
 angular.module('jeImgSliderModule', [])
@@ -8,8 +10,8 @@ angular.module('jeImgSliderModule', [])
   o.scope = {
     imgarray: '='
   };
-  o.link = function($scope, element, attrs){};
-  o.controller = function($scope, $rootScope, $window){
+  o.link = function(){};
+  o.controller = function($scope){
     $scope.imageIndex = 0;
     console.log($scope.imgarray);
 
@@ -20,15 +22,13 @@ angular.module('jeImgSliderModule', [])
         }else{
           $scope.imageIndex = $scope.imgarray.length - 1;
         }
+      }
+      if($scope.imageIndex !== $scope.imgarray.length - 1){
+        $scope.imageIndex++;
       }else{
-        if($scope.imageIndex !== $scope.imgarray.length - 1){
-          $scope.imageIndex++;
-        }else{
-          $scope.imageIndex = 0;
-        }
+        $scope.imageIndex = 0;
       }
     };
   };
-
   return o;
 });

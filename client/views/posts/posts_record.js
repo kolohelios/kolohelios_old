@@ -1,9 +1,9 @@
-//posts_new.js
+// /views/posts/posts_record.js
+
 'use strict';
 
 angular.module('kolohelios')
 .controller('PostsRecordCtrl', ['$scope', 'Post', '$state', function($scope, Post, $state){
-
   $scope.postId = $state.params.post;
 
   if($scope.postId){
@@ -48,5 +48,4 @@ angular.module('kolohelios')
       $scope.postId = null;
     });
   };
-
 }]);

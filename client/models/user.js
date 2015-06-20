@@ -1,8 +1,9 @@
+// /models/user.js
+
 'use strict';
 
 angular.module('kolohelios')
 .factory('User', ['$rootScope', function($rootScope){
-
   function login(user){
     return $rootScope.afAuth.$authWithPassword(user);
   }

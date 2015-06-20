@@ -4,7 +4,6 @@
 
 angular.module('kolohelios')
 .factory('Portfolio', ['$rootScope', '$firebaseArray', function($rootScope, $firebaseArray){
-
   var fbPortfolio;
   var afPortfolio;
 
@@ -29,5 +28,4 @@ angular.module('kolohelios')
   };
 
   return Portfolio;
-
 }]);

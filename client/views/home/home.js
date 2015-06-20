@@ -1,8 +1,9 @@
+// /views/home/home.js
+
 'use strict';
 
 angular.module('kolohelios')
 .controller('HomeCtrl', ['$scope', 'Post', 'Project', '$state', function($scope, Post, Project, $state){
-
   $(document).ready(function(){
     $('.parallax').parallax();
   });
@@ -21,5 +22,4 @@ angular.module('kolohelios')
   $scope.sendMessage = function(){
     console.log('clicked');
   };
-
 }]);

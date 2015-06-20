@@ -1,9 +1,9 @@
 // /views/posts/posts_show.js
+
 'use strict';
 
 angular.module('kolohelios')
 .controller('PostsShowCtrl', ['$scope', 'Post', '$state', '$window', function($scope, Post, $state, $window){
-
   $scope.post = {};
 
   $scope.posts = Post.init();
@@ -24,5 +24,4 @@ angular.module('kolohelios')
       });
     }
   };
-
 }]);

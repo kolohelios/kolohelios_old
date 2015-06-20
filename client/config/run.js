@@ -1,4 +1,5 @@
-// config/run .js
+// /config/run.js
+
 'use strict';
 
 angular.module('kolohelios')

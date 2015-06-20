@@ -1,9 +1,9 @@
-//projects_new.js
+// /views/projects/projects_record.js
+
 'use strict';
 
 angular.module('kolohelios')
 .controller('ProjectsRecordCtrl', ['$scope', 'Project', '$state', 'Portfolio', function($scope, Project, $state, Portfolio, $window){
-
   $scope.projectId = $state.params.project;
 
   if($scope.projectId){
@@ -36,7 +36,7 @@ angular.module('kolohelios')
     $scope.project.images.push(imageArray);
     $scope.imageLink = '';
     $scope.imageCaption = '';
-  }
+  };
 
   $scope.removeImage = function(imageIndex){
     var confirmDelete = $window.confirm('Are you sure you want to delete this image?');
@@ -54,5 +54,4 @@ angular.module('kolohelios')
     Project.save(project);
     $state.go('projects.list');
   };
-
 }]);

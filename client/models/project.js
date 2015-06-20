@@ -1,12 +1,13 @@
+// /models/project.js
+
 'use strict';
 
 angular.module('kolohelios')
 .factory('Project', ['$rootScope', '$firebaseObject', function($rootScope, $firebaseObject){
-
   var fbProject;
   var afProject;
 
-  function Project() {}
+  function Project(){}
 
   Project.init = function(){
     fbProject = $rootScope.fbRoot.child('projects/');
@@ -28,5 +29,4 @@ angular.module('kolohelios')
   };
 
   return Project;
-
 }]);

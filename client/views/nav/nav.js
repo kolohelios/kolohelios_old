@@ -1,16 +1,17 @@
+// /views/nav/nav.js
+
 'use strict';
 
 $(document).ready(function(){
-  $('.button-collapse').sideNav({ closeOnClick: true });
+  $('.button-collapse').sideNav({closeOnClick: true});
 });
 
 angular.module('kolohelios')
 .controller('NavCtrl', ['$scope', '$rootScope', 'User', function($scope, $rootScope, User){
-
-  $scope.afAuth.$onAuth(function(data) {
+  $scope.afAuth.$onAuth(function(data){
     if(data){
       $rootScope.activeUser = data;
-    } else{
+    }else{
       $rootScope.activeUser = null;
     }
   });
@@ -18,5 +19,4 @@ angular.module('kolohelios')
   $scope.logout = function(){
     User.logout();
   };
-
 }]);

@@ -1,8 +1,8 @@
 {
-  "name": "poseidon",
+  "name": "kolohelios",
   "version": "0.0.1",
-  "homepage": "https://github.com/coding-house-apr2015/poseidon",
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "homepage": "https://github.com/kolohelios/kolohelios",
+  "author": "Jon Edwards <jkedwards@me.com>",
   "license": "BSD",
   "devDependencies": {
     "bower": "^1.4.1",
@@ -17,7 +17,7 @@
     "gulp-filesize": "0.0.6",
     "gulp-if": "^1.2.5",
     "gulp-jade": "^1.0.0",
-    "gulp-jshint": "^1.10.0",
+    "gulp-eslint": "^0.14.0",
     "gulp-less": "^3.0.3",
     "gulp-minify-css": "^1.1.0",
     "gulp-rename": "^1.2.2",
@@ -29,5 +29,8 @@
     "jshint-stylish": "^1.0.1",
     "rimraf": "^2.3.2",
     "run-sequence": "^1.1.0"
+  },
+  "dependencies": {
+
   }
 }

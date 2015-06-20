@@ -1,9 +1,9 @@
 // /models/post.js
+
 'use strict';
 
 angular.module('kolohelios')
 .factory('Post', ['$rootScope', '$firebaseArray', function($rootScope, $firebaseArray){
-
   var fbPosts;
   var afPosts;
 
@@ -12,15 +12,12 @@ angular.module('kolohelios')
     afPosts = $firebaseArray(fbPosts);
     return afPosts;
   }
-
   function create(post){
     return afPosts.$add(post);
   }
-
   function save(post){
     return afPosts.$save(post);
   }
-  
   function remove(post){
     return afPosts.$remove(post);
   }

@@ -1,9 +1,9 @@
-//projects_list.js
+// /views/projects/projects_list.js
+
 'use strict';
 
 angular.module('kolohelios')
 .controller('ProjectsListCtrl', ['$scope', 'Portfolio', function($scope, Portfolio, $window){
-
   $scope.projects = Portfolio.init();
 
   $scope.projectDelete = function(project){
