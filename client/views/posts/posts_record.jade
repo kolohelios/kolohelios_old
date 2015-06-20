@@ -37,7 +37,7 @@
       label(for='addimage') Add Image
       input.form-control(type='text', name='addimage', ng-model='newImage')
       button.form-control.btn.btn-primary(ng-click='addImage(newImage)') Add Image
-.row(ng-if='activeUser')
+.row.hide-on-med-and-up(ng-if='activeUser')
   .col.s12
     .form-group
       label(for='bodytext') Body
@@ -46,8 +46,19 @@
         i.mdi-content-send.right
       button.waves-effect.waves-light.btn-large(ng-show='postId' ng-click='savePost(post)') Save Post
         i.mdi-content-send.right
-.row(ng-if='activeUser')
   .col.s12
     hr
-    h4.grey-text.center Post Preview
-    div(markdown='post.bodyText')
+    p.grey-text.center Post Preview
+    div.markdown-body(markdown='post.bodyText')
+.row.hide-on-small-only
+  .col.s6
+    .form-group
+      label(for='bodytext') Body
+      textarea.form-control(rows='10', name='bodytext', ng-model='post.bodyText')
+      button.waves-effect.waves-light.btn-large(ng-hide='postId' ng-click='addPost(post)') Add Post
+        i.mdi-content-send.right
+      button.waves-effect.waves-light.btn-large(ng-show='postId' ng-click='savePost(post)') Save Post
+        i.mdi-content-send.right
+  .col.s6
+    label Post Preview
+    div.markdown-body(markdown='post.bodyText')

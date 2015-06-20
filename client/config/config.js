@@ -24,4 +24,7 @@ angular.module('kolohelios')
   .state('projects.new', {url: '/new', templateUrl: '/views/projects/projects_record.html', controller: 'ProjectsRecordCtrl'})
   .state('projects.show', {url: '/{project}', templateUrl: '/views/projects/projects_show.html', controller: 'ProjectsShowCtrl'})
   .state('projects.edit', {url: '/{project}/edit', templateUrl: '/views/projects/projects_record.html', controller: 'ProjectsRecordCtrl'});
+}])
+.config(['markdownConfig', function(markdownConfig){
+  markdownConfig.showdown.extensions = ['github'];
 }]);

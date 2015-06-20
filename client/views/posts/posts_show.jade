@@ -3,7 +3,7 @@
     .container
       h2 {{post.title}}
       img.responsive-img(ng-repeat='image in post.images', ng-src='{{image}}')
-      div(markdown='post.bodyText')
+      div.markdown-body(markdown='post.bodyText')
   .col.s12.center-align(ng-if='activeUser')
     a.waves-effect.waves-light.btn-large(ui-sref='posts.edit({post: postId})') Edit Post
     a.waves-effect.waves-light.btn-large(ng-click='removePost(post)') Remove Post
