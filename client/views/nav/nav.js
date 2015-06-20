@@ -2,8 +2,8 @@
 
 'use strict';
 
-$(document).ready(function(){
-  $('.button-collapse').sideNav({closeOnClick: true});
+angular.element(document).ready(function(){
+  angular.element('.button-collapse').sideNav({closeOnClick: true});
 });
 
 angular.module('kolohelios')

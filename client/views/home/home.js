@@ -4,9 +4,10 @@
 
 angular.module('kolohelios')
 .controller('HomeCtrl', ['$scope', 'Post', 'Project', '$state', function($scope, Post, Project, $state){
-  $(document).ready(function(){
-    $('.parallax').parallax();
+  angular.element(document).ready(function(){
+    angular.element('.parallax').parallax();
   });
+
   $scope.posts = Post.init();
   $scope.projects = Project.init();
 
