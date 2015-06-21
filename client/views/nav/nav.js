@@ -7,7 +7,7 @@ angular.element(document).ready(function(){
 });
 
 angular.module('kolohelios')
-.controller('NavCtrl', ['$scope', '$rootScope', 'User', function($scope, $rootScope, User){
+.controller('NavCtrl', ['$scope', '$rootScope', 'User', 'Wunderground', function($scope, $rootScope, User, Wunderground){
   $scope.afAuth.$onAuth(function(data){
     if(data){
       $rootScope.activeUser = data;
@@ -19,4 +19,6 @@ angular.module('kolohelios')
   $scope.logout = function(){
     User.logout();
   };
+
+  Wunderground.getWeather();
 }]);
