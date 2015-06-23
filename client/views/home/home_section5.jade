@@ -4,9 +4,9 @@
     br
     h5
       img#wxicon(ng-src='{{wxIcon}}')
-      span {{temperature}}º F in Seattle right now.
+      span It's {{temperature | number : 0}}º F in Seattle right now.
     br
-    h5 Earthquakes Within 250 miles of Seattle Within the Last Two Weeks
+    h5 *Recent Earthquakes Near Seattle
     table.centered.bordered
       thead
         tr
@@ -18,3 +18,4 @@
           td {{earthquake.properties.timeAgo}}
           td {{earthquake.properties.place}}
           td {{earthquake.properties.mag | number : 1}}
+    p * last two weeks and within 250 miles

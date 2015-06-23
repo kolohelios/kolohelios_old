@@ -26,7 +26,9 @@ angular.module('kolohelios')
   $scope.projects.$loaded().then(function(){
     $scope.projectArray = [];
     $scope.projects.forEach(function(record){
-      $scope.projectArray.push(record);
+      if(record.isDraft === false || $scope.activeUser){
+        $scope.projectArray.push(record);
+      }
     });
     findRecord($scope.projectArray, $scope.projectId);
   });
