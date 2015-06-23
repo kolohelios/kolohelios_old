@@ -1,4 +1,20 @@
 .section.fifthsection
   .row.center-align
-    p {{temperature}}º F in Seattle right now.
     button.waves-effect.waves-light.btn-large.z-depth-3(ui-sref='contact') Contact Me
+    br
+    h5
+      img#wxicon(ng-src='{{wxIcon}}')
+      span {{temperature}}º F in Seattle right now.
+    br
+    h5 Earthquakes Within 250 miles of Seattle Within the Last Two Weeks
+    table.centered.bordered
+      thead
+        tr
+          th When
+          th Place
+          th Size
+      tbody
+        tr(ng-repeat='earthquake in earthquakes | orderBy : properties.time')
+          td {{earthquake.properties.timeAgo}}
+          td {{earthquake.properties.place}}
+          td {{earthquake.properties.mag | number : 1}}

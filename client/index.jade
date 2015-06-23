@@ -16,7 +16,6 @@ html(lang='en', ng-app='kolohelios')
     include views/nav/nav
     div(ui-view)
     include views/footer/footer
-
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src='/vendor/materialize/dist/js/materialize.min.js')
     script(src='/vendor/showdown/compressed/Showdown.min.js')
@@ -26,12 +25,12 @@ html(lang='en', ng-app='kolohelios')
     script(src='/vendor/angular/angular.min.js')
     script(src='/vendor/angularfire/dist/angularfire.min.js')
     script(src='/vendor/angular-ui-router/release/angular-ui-router.min.js')
+    script(src='/vendor/moment/min/moment.min.js')
     //stuff below is so that the markdown works
     script(src='/vendor/angular-sanitize/angular-sanitize.min.js')
     script(src='/vendor/angular-markdown-text/dist/angular-markdown-text.min.js')
     script(src='/vendor/sweetalert/lib/sweet-alert.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')
-  
     // Google Analytics code
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

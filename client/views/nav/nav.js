@@ -7,7 +7,7 @@ angular.element(document).ready(function(){
 });
 
 angular.module('kolohelios')
-.controller('NavCtrl', ['$scope', '$rootScope', 'User', 'Wunderground', function($scope, $rootScope, User, Wunderground){
+.controller('NavCtrl', ['$scope', '$rootScope', 'User', 'Wunderground', 'USGS', function($scope, $rootScope, User, Wunderground, USGS){
   $scope.afAuth.$onAuth(function(data){
     if(data){
       $rootScope.activeUser = data;
@@ -21,4 +21,5 @@ angular.module('kolohelios')
   };
 
   Wunderground.getWeather();
+  USGS.getEarthquakes();
 }]);

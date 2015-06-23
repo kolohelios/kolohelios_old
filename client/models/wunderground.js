@@ -14,6 +14,7 @@ angular.module('kolohelios')
       $http.get(wundergroundUrl + wundergroundApiKey + '/conditions/q/WA/Seattle.json')
       .then(function(response){
         $rootScope.temperature = response.data.current_observation.temp_f;
+        $rootScope.wxIcon = response.data.current_observation.icon_url;
       });
     });
   }
