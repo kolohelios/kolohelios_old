@@ -29,7 +29,7 @@
       input(type='text' name='displayorder' ng-model='project.displayOrder')
     p(ng-show='project.techs.length > 0') Techs
       p
-        span(ng-class='{"active": projectId}') {{project.techs.join(' | ')}} 
+        span(ng-class='{"active": projectId}') {{project.techs.join(' | ')}}
         br
         label(for='addtech') Add Tech
         input(type='text' name='addtech' ng-model='newTech')

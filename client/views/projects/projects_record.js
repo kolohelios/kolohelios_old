@@ -30,9 +30,9 @@ angular.module('kolohelios')
 
   $scope.addImage = function(link, caption){
     var imageArray = [];
+    if(!$scope.project.images){$scope.project.images = []; }
     console.log($scope.imageLink);
-    imageArray.push(link);
-    imageArray.push(caption);
+    imageArray.push(link, caption);
     $scope.project.images.push(imageArray);
     $scope.imageLink = '';
     $scope.imageCaption = '';

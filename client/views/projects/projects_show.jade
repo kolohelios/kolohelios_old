@@ -35,5 +35,5 @@
         li(ng-repeat='tech in project.techs | orderBy: tech') {{tech}}
       h5 Role:
         p.spacing {{project.role}}
-      h5: i.mdi-av-play-circle-fill: a(ng-href='{{project.linkToApp}}') &nbsp;{{project.linkText}}
-      h5: i.fa.fa-github: a(ng-href='{{project.linkToRepo}}') &nbsp;&nbsp;Link to Github repository
+      h5: i.mdi-av-play-circle-fill: a(ng-href='{{project.linkToApp}}' target='_blank') &nbsp;{{project.linkText}}
+      h5: i.fa.fa-github: a(ng-href='{{project.linkToRepo}}' target='_blank') &nbsp;&nbsp;Link to Github repository
