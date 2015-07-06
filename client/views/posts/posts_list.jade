@@ -1,7 +1,7 @@
 .section.green.lighten-2
   h2.center Blog
   .row
-    .col.s12.m3#posts(ng-click='showPost(post)' ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index <= 2')
+    .col.s12.m3#posts(ng-click='showPost(post)' ng-repeat='post in posts | orderBy:"-postDate"', ng-if='(post.isDraft !== true || activeUser) && $index <= 3')
       .card
         .card-image
           img(ng-src='{{post.thumbnailimage}}')
@@ -23,7 +23,7 @@
               th Date
               th Tags
           tbody
-            tr(ng-repeat='post in posts | orderBy:"-postDate"', ng-click='showPost(post)', ng-if='(post.isDraft !== true || activeUser) && $index > 2')
+            tr(ng-repeat='post in posts | orderBy:"-postDate"', ng-click='showPost(post)', ng-if='(post.isDraft !== true || activeUser) && $index > 3')
               td: img.thumbnail(ng-src='{{post.thumbnailimage}}' width='100px')
               td {{post.title}}
               td {{post.postDate | date: 'dd MMM yyyy'}}

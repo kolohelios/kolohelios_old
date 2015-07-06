@@ -2,6 +2,7 @@
   .col.s12
     .container
       h2 {{post.title}}
+      h4.center-align Posted: {{post.postDate | date}}
       img.responsive-img(ng-repeat='image in post.images', ng-src='{{image}}')
       div.markdown-body(markdown='post.bodyText')
   .col.s12.center-align(ng-if='activeUser')
