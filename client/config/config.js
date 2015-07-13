@@ -27,4 +27,8 @@ angular.module('kolohelios')
 }])
 .config(['markdownConfig', function(markdownConfig){
   markdownConfig.showdown.extensions = ['github'];
+}])
+// adding hash prefix to make Angular framework routing compatible with Google's crawling protocol
+.config(['$locationProvider', function($locationProvider){
+  $locationProvider.hashPrefix('!');
 }]);
