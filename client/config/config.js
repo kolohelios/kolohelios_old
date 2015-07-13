@@ -27,4 +27,8 @@ angular.module('kolohelios')
 }])
 .config(['markdownConfig', function(markdownConfig){
   markdownConfig.showdown.extensions = ['github'];
+}])
+.config(['$locationProvider', function($locationProvider){
+  $locationProvider.html5Mode(false);
+  $locationProvider.hashPrefix('!');
 }]);
